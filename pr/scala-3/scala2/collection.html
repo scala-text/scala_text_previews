@@ -1,0 +1,1156 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>コレクションライブラリ · Scala研修テキスト（Scala 2版・archived）</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="case-class-and-pattern-matching.html" />
+    
+    
+    <link rel="prev" href="function.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction-to-scala.html">
+            
+                <a href="introduction-to-scala.html">
+            
+                    
+                    Scalaとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="sbt-install.html">
+            
+                <a href="sbt-install.html">
+            
+                    
+                    sbtをインストールする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    Scalaの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="sbt-compile-execute.html">
+            
+                <a href="sbt-compile-execute.html">
+            
+                    
+                    sbtでプログラムをコンパイル・実行する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="IDE.html">
+            
+                <a href="IDE.html">
+            
+                    
+                    IDE(IntelliJ IDEA)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    記法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="control-syntax.html">
+            
+                <a href="control-syntax.html">
+            
+                    
+                    Scalaの制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="class.html">
+            
+                <a href="class.html">
+            
+                    
+                    クラス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="object.html">
+            
+                <a href="object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="trait.html">
+            
+                <a href="trait.html">
+            
+                    
+                    トレイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="type-parameter.html">
+            
+                <a href="type-parameter.html">
+            
+                    
+                    型パラメータと変位指定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.14" data-path="collection.html">
+            
+                <a href="collection.html">
+            
+                    
+                    コレクションライブラリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="case-class-and-pattern-matching.html">
+            
+                <a href="case-class-and-pattern-matching.html">
+            
+                    
+                    ケースクラスとパターンマッチング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="error-handling.html">
+            
+                <a href="error-handling.html">
+            
+                    
+                    エラー処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="implicit.html">
+            
+                <a href="implicit.html">
+            
+                    
+                    Implicit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="introduction-to-typeclass.html">
+            
+                <a href="introduction-to-typeclass.html">
+            
+                    
+                    型クラスへの誘い
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="future-and-promise.html">
+            
+                <a href="future-and-promise.html">
+            
+                    
+                    FutureとPromise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="test.html">
+            
+                <a href="test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="java-interop.html">
+            
+                <a href="java-interop.html">
+            
+                    
+                    Javaとの相互運用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="exercises.html">
+            
+                <a href="exercises.html">
+            
+                    
+                    S99の案内
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="advanced-trait-di.html">
+            
+                <a href="advanced-trait-di.html">
+            
+                    
+                    トレイトの応用編：依存性の注入によるリファクタリング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="typeclass.html">
+            
+                <a href="typeclass.html">
+            
+                    
+                    付録：様々な型クラスの紹介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >コレクションライブラリ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="コレクションライブラリ（immutableとmutable）"><a name="コレクションライブラリ（immutableとmutable）" class="plugin-anchor" href="#コレクションライブラリ（immutableとmutable）"><i class="fa fa-link" aria-hidden="true"></i></a>コレクションライブラリ（immutableとmutable）</h1>
+<p>Scalaには配列（<code>Array</code>）やリスト（<code>List</code>）、連想配列（<code>Map</code>）、集合（<code>Set</code>）を扱うための豊富なライブラリがあります。これを使いこなすことで、Scalaでのプログラミングは劇的に楽になります。注意しなければならないのは、Scalaでは一度作成したら変更できない（immutable）なコレクションと変更できる通常のコレクション（mutable）があることです。皆さんはmutableなコレクションに馴染んでいるかと思いますが、Scalaで関数型プログラミングを行うためには、immutableなコレクションを活用する必要があります。</p>
+<p>immutableなコレクションを使うのにはいくつものメリットがあります</p>
+<ul>
+<li>関数型プログラミングで多用する再帰との相性が良い</li>
+<li>高階関数を用いて簡潔なプログラムを書くことができる</li>
+<li>一度作ったコレクションが知らない箇所で変更されていない事を保証できる</li>
+<li>並行に動作するプログラムの中で、安全に受け渡しすることができる</li>
+</ul>
+<p>mutableなコレクションを効果的に使えばプログラムの実行速度を上げることができますが、mutableなコレクションをどのような場面で使えばいいかは難しい問題です。</p>
+<p>この節では、Scalaのコレクションライブラリに含まれる以下のものについての概要を説明します。</p>
+<ul>
+<li><code>Array</code>(mutable)</li>
+<li><code>List</code>(immutable)</li>
+<li><code>Map</code>(immutable)・<code>Map</code>(mutable)</li>
+<li><code>Set</code>(immutable)・ <code>Set</code>(mutable)</li>
+</ul>
+<h2 id="array"><a name="array" class="plugin-anchor" href="#array"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/Array.scala" target="_blank">Array</a></h2>
+<p>まずは大抵のプログラミング言語にある配列です。</p>
+<p>```scala mdoc:nest
+val arr = Array(1, 2, 3, 4, 5)</p>
+<pre><code>
+これで1から5までの要素を持った配列が`arr`に代入されました。Scalaの配列は、他の言語のそれと同じように要素の中身を入れ替えることができます。配列の添字は0から始まります。なお、配列の型を指定しなくて良いのは、`Array(1, 2, 3, 4, 5)`の部分で、要素型が`Int`であるに違いないとコンパイラが型推論してくれるからです。型を省略せずに書くと
+
+```scala mdoc:nest
+val arr = Array[Int](1, 2, 3, 4, 5)
+</code></pre><p>となります。ここで、<code>[Int]</code>の部分は型パラメータと呼びます。<code>Array</code>だけだとどの型かわからないので、<code>[Int]</code>を付けることでどの型の<code>Array</code>かを指定しているわけです。この型パラメータは型推論を補うために、色々な箇所で出てくるので覚えておいてください。しかし、この場面では、<code>Array</code>の要素型は<code>Int</code>だとわかっているので、冗長です。次に要素へのアクセスと代入です。</p>
+<p>```scala mdoc:nest
+arr(0) = 7</p>
+<p>arr</p>
+<p>arr(0)</p>
+<pre><code>
+他の言語だと```arr[0]```のようにしてアクセスすることが多いので最初は戸惑うかもしれませんが、慣れてください。配列の`0`番目の要素がちゃんと`7`に入れ替わっていますね。
+
+配列の長さは`arr.length`で取得することができます。
+
+```scala mdoc:nest
+arr.length
+</code></pre><p><code>Array[Int]</code>はJavaでは<code>int[]</code>と同じ意味です。Scalaでは、配列などのコレクションの要素型を表記するとき
+<code>Collection[ElementType]</code>のように一律に表記し、配列も同じように記述するのです。Javaでは配列型だけ特別扱いするのに比べると統一的だと言えるでしょう。</p>
+<p>ただし、あくまでも表記上はある程度統一的に扱えますが、実装上はJVMの配列であり、 <strong>要素が同じでもequalsの結果がtrueにならない</strong>, <strong>生成する際にClassTagというものが必要</strong> などのいくつかの罠があるので、Arrayはパフォーマンス上必要になる場合以外はあまり積極的に使うものではありません。</p>
+<h3 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h3>
+<p>配列の<code>i</code>番目の要素と<code>j</code>番目の要素を入れ替える<code>swapArray</code>メソッドを定義してみましょう。<code>swapArray</code>メソッドの宣言は</p>
+<p>```scala mdoc:nest:silent
+def swapArray[T] (arr: Array[T])(i: Int, j: Int): Unit = ???</p>
+<pre><code>
+となります。`i`と`j`が配列の範囲外である場合は特に考慮しなくて良いです。
+
+&lt;!-- begin answer id="answer_ex1" style="display:none" --&gt;
+
+```scala mdoc:nest:silent
+def swapArray[T] (arr: Array[T])(i: Int, j: Int): Unit = {
+  val tmp = arr(i)
+  arr(i) = arr(j)
+  arr(j) = tmp
+}
+</code></pre><p>```scala mdoc:nest
+val arr = Array(1, 2, 3, 4, 5)</p>
+<p>swapArray(arr)(0, 4)</p>
+<p>arr</p>
+<p>swapArray(arr)(1, 3)</p>
+<p>arr</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### [Range](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/Range.scala)
+
+`Range`は範囲を表すオブジェクトです。`Range`は直接名前を指定して生成するより、`to`メソッドと`until`メソッドを用いて呼びだすことが多いです。また、`toList`メソッドを用いて、その範囲の数値の列を後述する`List`に変換することができます。では、早速REPLで`Range`を使ってみましょう。
+
+```scala mdoc:nest
+1 to 5
+
+(1 to 5).toList
+
+1 until 5
+
+(1 until 5).toList
+</code></pre><p><code>to</code>は右の被演算子を含む範囲を、<code>until</code>は右の被演算子を含まない範囲を表していることがわかります。また、<code>Range</code>は<code>toList</code>で後述する<code>List</code>に変換することができることもわかります。</p>
+<h3 id="list"><a name="list" class="plugin-anchor" href="#list"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/List.scala" target="_blank">List</a></h3>
+<p>さて、導入として大抵の言語にある<code>Array</code>を出しましたが、Scalaでは<code>Array</code>を使うことはそれほど多くありません。代わりに<code>List</code>や
+<code>Vector</code>といったデータ構造をよく使います（<code>Vector</code>については後述します）。<code>List</code>の特徴は、一度作成したら中身を変更できない（immutable）ということです。中身を変更できないデータ構造（永続データ構造とも呼びます）はScalaがサポートしている関数型プログラミングにとって重要な要素です。それでは<code>List</code>を使ってみましょう。</p>
+<p>```scala mdoc:nest
+val lst = List(1, 2, 3, 4, 5)</p>
+<pre><code>
+```scala
+lst(0) = 7
+</code></pre><p>見ればわかるように、<code>List</code>は一度作成したら値を更新することができません。しかし、<code>List</code>は値を更新することができませんが、ある<code>List</code>を元に新しい<code>List</code>を作ることができます。これが値を更新することの代わりになります。以降、<code>List</code>に対して組み込みで用意されている各種操作をみていくことで、<code>List</code>の値を更新することなく色々な操作ができることがわかるでしょう。</p>
+<h3 id="nil：空のlist"><a name="nil：空のlist" class="plugin-anchor" href="#nil：空のlist"><i class="fa fa-link" aria-hidden="true"></i></a>Nil：空のList</h3>
+<p>まず最初に紹介するのは<code>Nil</code>です。Scalaで空の<code>List</code>を表すには<code>Nil</code>というものを使います。Rubyなどでは<code>nil</code>は言語上かなり特別な意味を持ちますが、Scalaではデフォルトでスコープに入っているということ以外は特別な意味はなく<a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/List.scala#L659" target="_blank">単にobjectです</a>。Nilは単体では意味がありませんが、次に説明する<code>::</code>と合わせて用いることが多いです。</p>
+<h3 id="--listの先頭に要素をくっつける"><a name="--listの先頭に要素をくっつける" class="plugin-anchor" href="#--listの先頭に要素をくっつける"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/List.scala#L101" target="_blank">:: - Listの先頭に要素をくっつける</a></h3>
+<p><code>::</code>（コンスと読みます）は既にある<code>List</code>の先頭に要素をくっつけるメソッドです。これについては、REPLで結果をみた方が早いでしょう。</p>
+<p>```scala mdoc:nest
+val a1 = 1 :: Nil
+val a2 = 2 :: a1
+val a3 = 3 :: a2
+val a4 = 4 :: a3
+val a5 = 5 :: a3</p>
+<pre><code>
+付け足したい要素を`::`を挟んで`List`の前に書くことで`List`の先頭に要素がくっついていることがわかります。ここで、`::`はやや特別な呼び出し方をするメソッドであることを説明しなければなりません。まず、Scalaでは1引数のメソッドは中置記法で書くことができます。それで、`1 :: Nil` のように書くことができるわけです。次に、メソッド名の最後が`:`で終わる場合、被演算子の前と後ろをひっくり返して右結合で呼び出します。たとえば、
+
+```scala mdoc:nest
+1 :: 2 :: 3 :: 4 :: Nil
+</code></pre><p>は、実際には、</p>
+<p>```scala mdoc:nest
+Nil.::(4).::(3).::(2).::(1)</p>
+<pre><code>
+のように解釈されます。`List`の要素が演算子の前に来て、一見数値のメソッドのように見えるのに`List`のメソッドとして呼び出せるのはそのためです。
+
+### ++：List同士の連結
+
+`++`はList同士を連結するメソッドです。これもREPLで見た方が早いでしょう。
+
+```scala mdoc:nest
+List(1, 2) ++ List(3, 4)
+
+List(1) ++ List(3, 4, 5)
+
+List(3, 4, 5) ++ List(1)
+</code></pre><p><code>++</code>は1引数のメソッドなので、中置記法で書いています。また、末尾が<code>:</code>で終わっていないので、たとえば、</p>
+<p>```scala mdoc:nest
+List(1, 2) ++ List(3, 4)</p>
+<pre><code>
+は
+
+```scala mdoc:nest
+List(1, 2).++(List(3, 4))
+</code></pre><p>と同じ意味です。大きな<code>List</code>同士を連結する場合、計算量が大きくなるのでその点には注意した方が良いです。</p>
+<h3 id="mkstring：文字列のフォーマッティング"><a name="mkstring：文字列のフォーマッティング" class="plugin-anchor" href="#mkstring：文字列のフォーマッティング"><i class="fa fa-link" aria-hidden="true"></i></a>mkString：文字列のフォーマッティング</h3>
+<p>このメソッドはScalaで非常に<em>頻繁に使用されます。</em>皆さんも、Scalaを使っていく上で使う機会が多いであろうメソッドです。このメソッドは引数によって多重定義されており、3バージョンあるのでそれぞれを紹介します。</p>
+<h4 id="mkstring"><a name="mkstring" class="plugin-anchor" href="#mkstring"><i class="fa fa-link" aria-hidden="true"></i></a>mkString</h4>
+<p>引数なしバージョンです。このメソッドは、単に<code>List</code>の各要素を左から順に繋げた文字列を返します。</p>
+<p>```scala mdoc:nest
+List(1, 2, 3, 4, 5).mkString</p>
+<pre><code>
+注意しなければならないのは、引数なしメソッドの`mkString`は`()`を付けて呼びだすことが**できない**
+という点です。たとえば、以下のコードは、若干分かりにくいエラーメッセージがでてコンパイルに失敗します。
+
+```scala
+List(1, 2, 3, 4, 5).mkString()
+</code></pre><p>Scalaの<code>0</code>引数メソッドは<code>()</code>なしと
+<code>()</code>を使った定義の二通りあって、前者の形式で定義されたメソッドは<code>()</code>を付けずに呼び出さなければいけません。同様に、<code>()</code>を使って定義されたメソッドは、<code>()</code>を付けて呼び出さなければいけません。このScalaの仕様は混乱しやすいので注意してください。</p>
+<h4 id="mkstringsep-string"><a name="mkstringsep-string" class="plugin-anchor" href="#mkstringsep-string"><i class="fa fa-link" aria-hidden="true"></i></a>mkString(sep: String)</h4>
+<p>引数にセパレータ文字列<code>sep</code>を取り、<code>List</code>の各要素を<code>sep</code>で区切って左から順に繋げた文字列を返します。</p>
+<p>```scala mdoc:nest
+List(1, 2, 3, 4, 5).mkString(",")</p>
+<pre><code>
+#### `mkString(start: String, sep: String, end: String)`
+
+`mkString(sep)`とほとんど同じですが、`start`と`end`に囲まれた文字列を返すところが異なります。
+
+```scala mdoc:nest
+List(1, 2, 3, 4, 5).mkString("[", ",", "]")
+</code></pre><h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p><code>mkString</code>を使って、最初の数<code>start</code>と最後の数<code>end</code>を受け取って、</p>
+<pre><code>start,(start+1),(start+2)...,end
+</code></pre><p>となるような文字列を返すメソッド<code>joinByComma</code>を定義してみましょう（ヒント：<code>Range</code> にも<code>mkString</code>メソッドはあります）。</p>
+<p>例</p>
+<pre><code class="lang-scala">joinByComma(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)  <span class="hljs-comment">// 1,2,3,4,5</span>
+</code></pre>
+<p>```scala mdoc:nest:silent
+def joinByComma(start: Int, end: Int): String = {
+  ???
+}</p>
+<pre><code>
+&lt;!-- begin answer id="answer_ex2" style="display:none" --&gt;
+
+```scala mdoc:nest:silent
+def joinByComma(start: Int, end: Int): String = {
+  (start to end).mkString(",")
+}
+</code></pre><p>```scala mdoc:nest
+joinByComma(1, 10)</p>
+<pre><code>
+`(start to end)` で、 `start` から `end` までの列を作って、 `mkString(",")` を使って間に `,` を挟んでいます。
+
+&lt;!-- end answer --&gt;
+
+### foldLeft：左からの畳み込み
+
+`foldLeft`メソッドは`List`にとって非常に基本的なメソッドです。他の様々なメソッドを`foldLeft`を使って実装することができます。`foldLeft`の宣言を[ScalaのAPIドキュメント](https://www.scala-lang.org/api/current/scala/collection/immutable/List.html)から引用すると、
+
+```scala
+def foldLeft[B](z: B)(f: (B, A) =&gt; B): B
+</code></pre><p>となります。<code>z</code>が<code>foldLeft</code>の結果の初期値で、リストを左からたどりながら<code>f</code>を適用していきます。<code>foldLeft</code>についてはイメージが湧きにくいと思いますので、<code>List(1, 2, 3).foldLeft(0)((x, y) =&gt; x + y)</code>の結果を図示します。</p>
+<pre><code>       +
+      / \
+     +   3
+    / \
+   +   2
+  / \
+ 0   1
+</code></pre><p>この図で、</p>
+<pre><code>   +
+  / \
+ 0   1
+</code></pre><p>は<code>+</code>に0と1を与えて適用するということを意味します。リストの要素を左から順にfを使って「畳み込む」（fold
+は英語で畳み込むという意味を持ちます）状態がイメージできるでしょうか。<code>foldLeft</code>は汎用性の高いメソッドで、たとえば、<code>List</code>の要素の合計を求めたい場合は</p>
+<p>```scala mdoc:nest
+List(1, 2, 3).foldLeft(0)((x, y) =&gt; x + y)</p>
+<pre><code>
+`List`の要素を全て掛けあわせた結果を求めたい場合は
+
+```scala mdoc:nest
+List(1, 2, 3).foldLeft(1)((x, y) =&gt; x * y)
+</code></pre><p>とすることで求める結果を得ることができます<sup><a href="#fn_1" id="reffn_1">1</a></sup>。その他にも様々な処理を<code>foldLeft</code>を用いて実装することができます。</p>
+<p>さて、節の最後に、実用上の補足を少ししておきます。少し恣意的ですが1つの例として、「リストのリスト」をリストに変換する（平らにする）処理というのを考えてみます。
+<code>List(List(1), List(2 ,3))</code>を<code>List(1, 2, 3)</code>に変換するのが目標です。安直に書くとこうなるでしょうか：</p>
+<pre><code class="lang-scala">scala&gt; <span class="hljs-type">List</span>(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>), <span class="hljs-type">List</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), <span class="hljs-type">List</span>(<span class="hljs-number">4</span>)).foldLeft(<span class="hljs-type">Nil</span>)(_ ++ _) 
+&lt;console&gt;:<span class="hljs-number">12</span>: error: <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">mismatch</span></span>;
+ found   : <span class="hljs-type">List</span>[<span class="hljs-type">Int</span>]
+ required: scala.collection.immutable.<span class="hljs-type">Nil</span>.<span class="hljs-keyword">type</span>
+       <span class="hljs-type">List</span>(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>), <span class="hljs-type">List</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), <span class="hljs-type">List</span>(<span class="hljs-number">4</span>)).foldLeft(<span class="hljs-type">Nil</span>)(_ ++ _)
+                                                          ^
+</code></pre>
+<p>しかしコンパイルが通りません。エラーメッセージの意味としては、今回の<code>Nil</code>は<code>List[Int]</code>型と見なされてほしいわけですが、期待したように型推論できていないようです。
+<code>Nil</code>に明示的に型注釈を付けることで、コンパイルできるようになります。</p>
+<p>```scala mdoc:nest
+List(List(1), List(2, 3), List(4)).foldLeft(Nil: List[Int])(<em> ++ </em>)</p>
+<pre><code>
+このように、`Nil`が混ざった処理はそのままだとうまくコンパイルが通ってくれないことがあります。そういう場合は型注釈を試すとよい、と頭の片隅に入れておいてください。
+
+#### 練習問題
+
+`foldLeft`を用いて、`List`の要素を反転させる次のシグニチャを持ったメソッド`reverse`を実装してみましょう：
+
+```scala mdoc:nest:silent
+def reverse[T](list: List[T]): List[T] = ???
+</code></pre><div><button type="button" id="answer_ex3_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex3').style.display='block'; document.getElementById('answer_ex3_show_answer_button').style.display='none'; document.getElementById('answer_ex3_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex3_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex3').style.display='none'; document.getElementById('answer_ex3_show_answer_button').style.display='block'; document.getElementById('answer_ex3_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex3" style="display:none">
+<p>```scala mdoc:nest:silent
+def reverse<a href="list: List[T]" target="_blank">T</a>: List[T] = list.foldLeft(Nil: List[T])((a, b) =&gt; b :: a)</p>
+<pre><code>
+```scala mdoc:nest
+reverse(List(1, 2, 3, 4, 5))
+</code></pre><p><code>foldLeft</code> の初期値に <code>Nil</code> を与えて、そこから後ろにたどる毎に、「前に」要素を追加していくことで、逆順のリストを作ることができています。</p>
+<p>```scala mdoc:nest:invisible
+import org.scalacheck._, Arbitrary.arbitrary</p>
+<p>def test[G] (g: Gen[G])(f: G  =&gt; Boolean) = {
+  val result = Prop.forAll(g)(f).apply(Gen.Parameters.default)
+  assert(result.success, result)
+}</p>
+<p>test(arbitrary[List[Int]]){ list =&gt;
+  reverse(list) == list.reverse
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### foldRight：右からの畳み込み
+
+`foldLeft`が`List`の左からの畳み込みだったのに対して、`foldRight`は右からの畳込みです。`foldRight`の宣言を
+[ScalaのAPIドキュメントから](https://www.scala-lang.org/api/current/scala/collection/immutable/List.html)参照すると、
+
+```scala
+def foldRight[B](z: B)(op: (A, B) =&gt; B): B
+</code></pre><p>となります。<code>foldRight</code>に与える関数である<code>op</code>の引数の順序が<code>foldLeft</code>の場合と逆になっている事に注意してください。
+<code>foldRight</code>を<code>List(1, 2, 3).foldRight(0)((y, x) =&gt; y + x)</code>とした場合の様子を図示すると次のようになります。</p>
+<pre><code>   +
+  / \
+ 1   +   
+    / \
+   2   +   
+      / \
+     3   0
+</code></pre><p>ちょうど<code>foldLeft</code>と対称になっています。<code>foldRight</code>も非常に汎用性の高いメソッドで、多くの処理を<code>foldRight</code>を用いて実装することができます。</p>
+<h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p><code>List</code>の全ての要素を足し合わせるメソッド<code>sum</code>を<code>foldRight</code>を用いて実装してみましょう。<code>sum</code>の宣言は次のようになります。なお、<code>List</code>が空のときは0を返してみましょう。</p>
+<p>```scala mdoc:nest:silent
+def sum(list: List[Int]): Int = ???</p>
+<pre><code>
+&lt;!-- begin answer id="answer_ex4" style="display:none" --&gt;
+
+```scala mdoc:nest:silent
+def sum(list: List[Int]): Int = list.foldRight(0){(x, y) =&gt; x + y}
+</code></pre><p>```scala mdoc:nest
+sum(List(1, 2, 3, 4, 5))</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+#### 練習問題
+
+`List`の全ての要素を掛け合わせるメソッド`mul`を`foldRight`を用いて実装してみましょう。`mul`の宣言は次のようになります。なお、`List`が空のときは1を返してみましょう。
+
+```scala mdoc:nest
+def mul(list: List[Int]): Int = ???
+</code></pre><div><button type="button" id="answer_ex5_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex5').style.display='block'; document.getElementById('answer_ex5_show_answer_button').style.display='none'; document.getElementById('answer_ex5_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex5_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex5').style.display='none'; document.getElementById('answer_ex5_show_answer_button').style.display='block'; document.getElementById('answer_ex5_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex5" style="display:none">
+<p>```scala mdoc:nest:silent
+def mul(list: List[Int]): Int = list.foldRight(1){(x, y) =&gt; x * y}</p>
+<pre><code>
+```scala mdoc:nest
+mul(List(1, 2, 3, 4, 5))
+</code></pre></div>
+<h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p><code>mkString</code>を実装してみましょう。<code>mkString</code>そのものを使ってはいけませんが、<code>foldLeft</code>や<code>foldRight</code>などの<code>List</code>に定義されている他のメソッドは自由に使って構いません。<a href="https://www.scala-lang.org/api/current/scala/collection/immutable/List.html" target="_blank">ListのAPIリファレンス</a>
+を読めば必要なメソッドが載っています。実装する<code>mkString</code>の宣言は</p>
+<p>```scala mdoc:nest:silent
+def mkString<a href="list: List[T]" target="_blank">T</a>(sep: String): String = ???</p>
+<pre><code>
+となります。残りの2つのバージョンの`mkString`は実装しなくても構いません。
+
+&lt;!-- begin answer id="answer_ex6" style="display:none" --&gt;
+
+```scala mdoc:nest:silent
+def mkString[T](list: List[T])(sep: String): String = list match {
+  case Nil =&gt; ""
+  case x::xs =&gt; xs.foldLeft(x.toString){(x, y) =&gt; x + sep + y}
+}
+</code></pre></div>
+<h3 id="map：各要素を加工した新しいlistを返す"><a name="map：各要素を加工した新しいlistを返す" class="plugin-anchor" href="#map：各要素を加工した新しいlistを返す"><i class="fa fa-link" aria-hidden="true"></i></a>map：各要素を加工した新しい<code>List</code>を返す</h3>
+<p><code>map</code>メソッドは、1引数の関数を引数に取り、各要素に関数を適用した結果できた要素からなる新たな<code>List</code>を返します。ためしに<code>List(1, 2, 3, 4, 5)</code>の各要素を2倍してみましょう。</p>
+<p>```scala mdoc:nest
+List(1, 2, 3, 4, 5).map(x =&gt; x * 2)</p>
+<pre><code>`x =&gt; x * 2`の部分は既に述べたように、無名関数を定義するための構文です。メソッドの引数に与える短い関数を定義するときは、
+Scalaでは無名関数をよく使います。`List`の全ての要素に何らかの処理を行い、その結果を加工するという処理は頻出するため、`map`は
+Scalaのコレクションのメソッドの中でも非常によく使われるものになっています。
+
+#### 練習問題
+
+次のシグニチャを持つ`map`メソッドを`foldLeft`と`reverse`を使って実装してみましょう：
+
+```scala mdoc:nest:silent
+def map[T, U](list: List[T])(f: T =&gt; U): List[U] = ???
+</code></pre><p><code>map</code> メソッドは次のようにして使います。</p>
+<pre><code class="lang-scala">assert(<span class="hljs-type">List</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>) == map(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))(x =&gt; x + <span class="hljs-number">1</span>))
+assert(<span class="hljs-type">List</span>(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>) == map(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))(x =&gt; x * <span class="hljs-number">2</span>))
+assert(<span class="hljs-type">Nil</span> == map(<span class="hljs-type">List</span>[<span class="hljs-type">Int</span>]())(x =&gt; x * x))
+assert(<span class="hljs-type">List</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)  == map(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))(x =&gt; <span class="hljs-number">0</span>))
+</code></pre>
+<div><button type="button" id="answer_ex7_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex7').style.display='block'; document.getElementById('answer_ex7_show_answer_button').style.display='none'; document.getElementById('answer_ex7_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex7_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex7').style.display='none'; document.getElementById('answer_ex7_show_answer_button').style.display='block'; document.getElementById('answer_ex7_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex7" style="display:none">
+<p>```scala mdoc:nest:silent
+def map<a href="list: List[T]" target="_blank">T, U</a>(f: T =&gt; U): List[U] = {
+  list.foldLeft(Nil:List[U]){(x, y) =&gt; f(y) :: x}.reverse
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### filter：条件に合った要素だけを抽出した新しい`List`を返す
+
+`filter`メソッドは、`Boolean`型を返す1引数の関数を引数に取り、各要素に関数を適用し、`true`になった要素のみを抽出した新たな`List`を返します。`List(1, 2, 3, 4, 5)`から奇数だけを抽出してみましょう。
+
+```scala mdoc:nest
+List(1, 2, 3, 4, 5).filter(x =&gt; x % 2 == 1)
+</code></pre><h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p>次のシグニチャを持つ<code>filter</code>メソッドを<code>foldLeft</code>と<code>reverse</code>を使って実装してみましょう：</p>
+<p>```scala mdoc:nest:silent
+def filter<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): List[T] = ???</p>
+<pre><code>
+```scala
+assert(List(2) == filter(List(1, 2, 3))(x =&gt; x % 2 == 0))
+assert(List(1, 3) == filter(List(1, 2, 3))(x =&gt; x % 2 == 1))
+assert(Nil == filter(List(1, 2, 3))(x =&gt; x &gt; 3))
+assert(List(1) == filter(List(1))(x =&gt; x == 1))
+assert(Nil == filter(List[Int]())(x =&gt; false))
+</code></pre><div><button type="button" id="answer_ex8_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex8').style.display='block'; document.getElementById('answer_ex8_show_answer_button').style.display='none'; document.getElementById('answer_ex8_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex8_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex8').style.display='none'; document.getElementById('answer_ex8_show_answer_button').style.display='block'; document.getElementById('answer_ex8_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex8" style="display:none">
+<p>```scala mdoc:nest:silent
+def filter<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): List[T] = {
+  list.foldLeft(Nil:List[T]){(x, y) =&gt; if(f(y)) y::x else x}.reverse
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### find：条件に合った最初の要素を返す
+
+`find`メソッドは、`Boolean`型を返す1引数の関数を引数に取り、各要素に前から順番に関数を適用し、最初にtrueになった要素を
+`Some`でくるんだ値を`Option`型として返します。1つの要素もマッチしなかった場合`None`を`Option`型として返します。
+`List(1, 2, 3, 4, 5)`から最初の奇数だけを抽出してみましょう
+
+```scala mdoc:nest
+List(1, 2, 3, 4, 5).find(x =&gt; x % 2 == 1)
+</code></pre><p>後で説明されることになりますが、<code>Option</code>型はScalaプログラミングの中で重要な要素であり頻出します。</p>
+<h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p>次のシグニチャを持つ<code>find</code>メソッドを<code>foldLeft</code>または再帰で実装してみましょう。<code>Option[T]</code> 型の<code>Some[T]</code> は <code>Some(1)</code> のように生成できます。また、要素がないことを表す<code>None</code>は<code>None</code>と表記できます。</p>
+<p>```scala mdoc:nest:silent
+def find<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): Option[T] = ???</p>
+<pre><code>
+```scala
+assert(Some(2) == find(List(1, 2, 3))(x =&gt; x == 2))
+assert(None == find(List(1, 2, 3))(x =&gt; x &gt; 3))
+assert(Some(1) == find(List(1))(x =&gt; x == 1))
+assert(None == find(List(1))(x =&gt; false))
+assert(None == find(List[Int]())(x =&gt; x == 1))
+</code></pre><div><button type="button" id="answer_ex9_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex9').style.display='block'; document.getElementById('answer_ex9_show_answer_button').style.display='none'; document.getElementById('answer_ex9_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex9_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex9').style.display='none'; document.getElementById('answer_ex9_show_answer_button').style.display='block'; document.getElementById('answer_ex9_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex9" style="display:none">
+<p>```scala mdoc:nest:silent
+def find<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): Option[T] = list match {
+  case x::xs if f(x) =&gt; Some(x)
+  case x::xs =&gt; find(xs)(f)
+  case _ =&gt; None
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### takeWhile：先頭から条件を満たしている間を抽出する
+
+`takeWhile`メソッドは、`Boolean`型を返す1引数の関数を引数に取り、前から順番に関数を適用し、結果が`true`の間のみからなる`List`を返します。`List(1, 2, 3, 4, 5)`の5より前の4要素を抽出してみます。
+
+```scala mdoc:nest
+List(1, 2, 3, 4, 5).takeWhile(x =&gt; x != 5)
+</code></pre><h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p>次のシグニチャを持つ<code>takeWhile</code>メソッドをループまたは再帰を使って実装してみましょう：</p>
+<p>```scala mdoc:nest:silent
+def takeWhile<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): List[T] = ???</p>
+<pre><code>
+`takeWhile` メソッドは次のようにして使います。
+
+```scala
+assert(List(1, 2, 3) == takeWhile(List(1, 2, 3, 4, 5))(x =&gt; x &lt;= 3))
+assert(List(1) == takeWhile(List(1, 2, 3, 3, 4, 5))(x =&gt; x == 1))
+assert(List(1, 2, 3, 4)  == takeWhile(List(1, 2, 3, 4, 5))(x =&gt; x &lt; 5))
+assert(Nil == takeWhile(List(1, 2, 3, 3, 2, 2))(x =&gt; false))
+</code></pre><div><button type="button" id="answer_ex10_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex10').style.display='block'; document.getElementById('answer_ex10_show_answer_button').style.display='none'; document.getElementById('answer_ex10_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex10_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex10').style.display='none'; document.getElementById('answer_ex10_show_answer_button').style.display='block'; document.getElementById('answer_ex10_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex10" style="display:none">
+<p>```scala mdoc:nest:silent
+def takeWhile<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): List[T] = {
+  list match {
+    case x::xs if f(x) =&gt;
+      x::takeWhile(xs)(f)
+    case _ =&gt;
+      Nil
+  }
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### count：`List`の中で条件を満たしている要素の数を計算する
+
+`count`メソッドは、`Boolean`型を返す1引数の関数を引数に取り、全ての要素に関数を適用して、`true`が返ってきた要素の数を計算します。例として`List(1, 2, 3, 4, 5)`の中から偶数の数（2になるはず）を計算してみます。
+
+```scala mdoc:nest
+List(1, 2, 3, 4, 5).count(x =&gt; x % 2 == 0)
+</code></pre><h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p>次のシグニチャを持つ<code>count</code>メソッドを<code>foldLeft</code>を使って実装してみましょう：</p>
+<p>```scala mdoc:nest:silent
+def count<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): Int = ???</p>
+<pre><code>
+`count` メソッドは次のようにして使います。
+
+```scala
+assert(3 == count(List(1, 2, 3, 3, 2, 2))(x =&gt; x == 2))
+assert(1 == count(List(1, 2, 3, 3, 2, 2))(x =&gt; x == 1))
+assert(2 == count(List(1, 2, 3, 3, 2, 2))(x =&gt; x == 3))
+assert(0 == count(List(1, 2, 3, 3, 2, 2))(x =&gt; x == 5))
+</code></pre><div><button type="button" id="answer_ex11_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex11').style.display='block'; document.getElementById('answer_ex11_show_answer_button').style.display='none'; document.getElementById('answer_ex11_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex11_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex11').style.display='none'; document.getElementById('answer_ex11_show_answer_button').style.display='block'; document.getElementById('answer_ex11_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex11" style="display:none">
+<p>```scala mdoc:nest:silent
+def count<a href="list: List[T]" target="_blank">T</a>(f: T =&gt; Boolean): Int  = {
+  list.foldLeft(0){(x, y) =&gt; if(f(y)) x + 1 else x}
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+### flatMap：`List`をたいらにする
+
+`flatMap`は一見少し変わったメソッドですが、後々重要になってくるメソッドなので説明しておきます。flatMapの宣言は[ScalaのAPIドキュメントから](https://www.scala-lang.org/api/current/scala/collection/immutable/List.html)参照すると、
+
+```scala
+final def flatMap[B](f: (A) =&gt; IterableOnce[B]): List[B]
+</code></pre><p>となります。ここで、<code>IterableOnce[B]</code>という変わった型が出てきていますが、ここではあらゆるコレクション（要素の型はB型である）を入れることができる型程度に考えてください。さて、flatMapの引数fの型は<code>(A) =&gt; IterableOnce[B]</code>です。<code>flatMap</code>はこれを使って、各要素にfを適用して、結果の要素からなるコレクションを分解してListの要素にします。これについては、実際に見た方が早いでしょう。</p>
+<p>```scala mdoc:nest
+List(List(1, 2, 3), List(4, 5)).flatMap{e =&gt; e.map{g =&gt; g + 1}}</p>
+<pre><code>
+ネストした`List`の各要素に`flatMap`の中で`map`を適用して、`List`の各要素に1を足したものをたいらにしています。これだけだとありがたみがわかりにくいですが、ちょっと形を変えてみると非常に面白い使い方ができます：
+
+```scala mdoc:nest
+List(1, 2, 3).flatMap{e =&gt; List(4, 5).map(g =&gt; e * g)}
+</code></pre><p><code>List(1, 2, 3)</code>と<code>List(4, 5)</code>の2つの<code>List</code>についてループし、各々の要素を掛けあわせた要素からなる<code>List</code>を抽出しています。実は、
+for-comprehension</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">for</span>(x &lt;- col1; y &lt;- col2) <span class="hljs-keyword">yield</span> z
+</code></pre>
+<p>は</p>
+<pre><code class="lang-scala">col1.flatMap{x =&gt; col2.map{y =&gt; z}}
+</code></pre>
+<p>のシンタックスシュガーだったのです。すなわち、ある自分で定義したデータ型に<code>flatMap</code>と<code>map</code>を（適切に）実装すれば
+for構文の中で使うことができるのです。</p>
+<h4 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h4>
+<p>次のシグニチャを持つ<code>flatMap</code>メソッドを再帰やループで実装してみましょう：</p>
+<p>```scala mdoc:nest:silent
+def flatMap<a href="list: List[T]" target="_blank">T, U</a>(f: T =&gt; List[U]): List[U] = ???</p>
+<pre><code>
+`flatMap` メソッドは次のようにして使います。
+
+```scala
+assert(List(1, 2, 3) == flatMap(List(1, 2, 3))(x =&gt; List(x)))
+assert(
+  List(3, 4, 6, 8) == flatMap(List(1, 2))(x =&gt;
+    map(List(3, 4))(y =&gt; x * y)
+  )
+)
+</code></pre><div><button type="button" id="answer_ex12_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex12').style.display='block'; document.getElementById('answer_ex12_show_answer_button').style.display='none'; document.getElementById('answer_ex12_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex12_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex12').style.display='none'; document.getElementById('answer_ex12_show_answer_button').style.display='block'; document.getElementById('answer_ex12_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex12" style="display:none">
+<p>```scala mdoc:nest:silent
+def flatMap<a href="list: List[T]" target="_blank">T, U</a>(f: T =&gt; List[U]): List[U] = {
+  list match {
+    case Nil =&gt; Nil
+    case x::xs =&gt; f(x) ::: flatMap(xs)(f)
+  }
+}</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+#### Listの性能特性
+
+`List`の性能特性として、`List`の先頭要素へのアクセスは高速にできる反面、要素へのランダムアクセスや末尾へのデータの追加は
+`List`の長さに比例した時間がかかってしまうということが挙げられます。`List`は関数型プログラミング言語で最も基本的なデータ構造で、どの関数型プログラミング言語でもたいていは`List`がありますが、その性能特性には十分注意して扱う必要があります。特に他の言語のプログラマはうっかり`List`の末尾に要素を追加するような遅いプログラムを書いてしまうことがあるので注意する必要があります。
+
+```scala mdoc:nest
+List(1, 2, 3, 4)
+
+5 :: List(1, 2, 3, 4) // Listの先頭のセルに新しいをくっつける
+
+List(1, 2, 3, 4) :+ 5 // 注意！末尾への追加は、Listの要素数分かかる
+</code></pre><h3 id="紹介したメソッドについて"><a name="紹介したメソッドについて" class="plugin-anchor" href="#紹介したメソッドについて"><i class="fa fa-link" aria-hidden="true"></i></a>紹介したメソッドについて</h3>
+<p><code>mkString</code>をはじめとした<code>List</code>の色々なメソッドを紹介してきましたが、実はこれらの大半は<code>List</code>特有ではなく、既に紹介した<code>Range</code>や<code>Array</code>、これから紹介する他のコレクションでも同様に使うことができます。何故ならばこれらの操作の大半は特定のコレクションではなく、コレクションのスーパータイプである共通のトレイト中に宣言されているからです。もちろん、<code>List</code>に要素を加える処理と<code>Set</code>に要素を加える処理（<code>Set</code>に既にある要素は加えない）のように、中で行われる処理が異なることがあるので、その点は注意する必要があります。詳しくは<a href="https://www.scala-lang.org/api/current/index.html" target="_blank">ScalaのAPIドキュメント</a>を探索してみましょう。</p>
+<h3 id="vector"><a name="vector" class="plugin-anchor" href="#vector"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/Vector.scala" target="_blank">Vector</a></h3>
+<p><code>Vector</code>は少々変わったデータ構造です。<code>Vector</code>は一度データ構造を構築したら変更できないimmutableなデータ構造です。要素へのランダムアクセスや長さの取得、データの挿入や削除、いずれの操作も十分に高速にできる比較的万能なデータ構造です。immutableなデータ構造を使う場合は、まず<code>Vector</code>を検討すると良いでしょう。</p>
+<p>```scala mdoc:nest
+Vector(1, 2, 3, 4, 5) //どの操作も「ほぼ」一定の時間で終わる</p>
+<p>6 +: Vector(1, 2, 3, 4, 5)</p>
+<p>Vector(1, 2, 3, 4, 5) :+ 6</p>
+<p>Vector(1, 2, 3, 4, 5).updated(2, 5)</p>
+<pre><code>
+## Map
+
+`Map`はキーから値へのマッピングを提供するデータ構造です。他の言語では辞書や連想配列と呼ばれたりします。
+Scalaでは`Map`として一度作成したら変更できないimmutableな`Map`と変更可能なmutableな`Map`の2種類を提供しています。
+
+### [`scala.collection.immutable.Map`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/Map.scala)
+
+Scalaで何も設定せずにただ`Map`と書いた場合、`scala.collection.immutable.Map`が使われます。その名の通り、一度作成すると変更することはできません。内部の実装としては主に[`scala.collection.immutable.HashMap`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/HashMap.scala)と
+[`scala.collection.immutable.TreeMap`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/TreeMap.scala)の2種類がありますが、通常は`HashMap`が使われます。
+
+```scala mdoc:nest
+val m = Map("A" -&gt; 1, "B" -&gt; 2, "C" -&gt; 3)
+
+m.updated("B", 4) //一見元のMapを変更したように見えても
+
+m // 元のMapはそのまま
+</code></pre><h3 id="scalacollectionmutablemap"><a name="scalacollectionmutablemap" class="plugin-anchor" href="#scalacollectionmutablemap"><i class="fa fa-link" aria-hidden="true"></i></a><code>scala.collection.mutable.Map</code></h3>
+<p>Scalaの変更可能な<code>Map</code>は<code>scala.collection.mutable.Map</code>にあります。実装としては、<code>scala.collection.mutable.HashMap</code>、
+<code>scala.collection.mutable.LinkedHashMap</code>、リストをベースにした<code>scala.collection.mutable.ListMap</code>がありますが、通常は
+<code>HashMap</code>が使われます。</p>
+<p>```scala mdoc:nest
+import scala.collection.mutable</p>
+<p>val m = mutable.Map("A" -&gt; 1, "B" -&gt; 2, "C" -&gt; 3)</p>
+<p>m("B") = 5 // B -&gt; 5 のマッピングに置き換える</p>
+<p>m // 変更が反映されている</p>
+<pre><code>
+## Set
+
+`Set`は値の集合を提供するデータ構造です。`Set`の中では同じ値が2つ以上存在しません。たとえば、`Int`の`Set`の中には1が2つ以上含まれていてはいけません。REPLで`Set`を作成するための式を入力すると、
+
+```scala mdoc:nest
+Set(1, 1, 2, 3, 4)
+</code></pre><p>重複した1が削除されて、1が1つだけになっていることがわかります。</p>
+<h3 id="scalacollectionimmutableset"><a name="scalacollectionimmutableset" class="plugin-anchor" href="#scalacollectionimmutableset"><i class="fa fa-link" aria-hidden="true"></i></a><code>scala.collection.immutable.Set</code></h3>
+<p>Scalaで何も設定せずにただ<code>Set</code>と書いた場合、<code>scala.collection.immutable.Set</code>が使われます。immutableな<code>Map</code>の場合と同じく、一度作成すると変更することはできません。内部の実装としては、主に <a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/HashSet.scala" target="_blank"><code>scala.collection.immutable.HashSet</code></a> と
+<a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/TreeSet.scala" target="_blank"><code>scala.collection.immutable.TreeSet</code></a> の2種類がありますが、通常は<code>HashSet</code>が使われます。</p>
+<p>```scala mdoc:nest
+val s = Set(1, 2, 3, 4, 5)</p>
+<p>s - 5 // 5を削除した後も</p>
+<p>s // 元のSetはそのまま</p>
+<pre><code>
+### `scala.collection.mutable.Set`
+
+Scalaの変更可能な`Set`は`scala.collection.mutable.Set`にあります。主な実装としては、[`scala.collection.mutable.HashSet`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/mutable/HashSet.scala) 、
+[`scala.collection.mutable.TreeSet`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/mutable/TreeSet.scala)がありますが、通常は`HashSet`が使われます。
+
+```scala mdoc:nest
+import scala.collection.mutable
+
+val s = mutable.Set(1, 2, 3, 4, 5)
+
+s -= 5 // 5 を削除したら
+
+s // 変更が反映される
+</code></pre><h3 id="その他資料"><a name="その他資料" class="plugin-anchor" href="#その他資料"><i class="fa fa-link" aria-hidden="true"></i></a>その他資料</h3>
+<p>さらにコレクションライブラリについて詳しく知りたい場合は、以下の公式のドキュメントなどを読みましょう
+<a href="https://docs.scala-lang.org/ja/overviews/collections/introduction.html" target="_blank">https://docs.scala-lang.org/ja/overviews/collections/introduction.html</a></p>
+<blockquote id="fn_1">
+<sup>1</sup>. ただし、これはあくまでもfoldLeftの例であって、要素の和や積を求めたい場合に限って言えばもっと便利なメソッドが標準ライブラリに存在するので、実際にはこの例のような使い方はしません<a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+</div></div></div></div></div></div></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="function.html" class="navigation navigation-prev " aria-label="Previous page: 関数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="case-class-and-pattern-matching.html" class="navigation navigation-next " aria-label="Next page: ケースクラスとパターンマッチング">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"コレクションライブラリ","level":"1.14","depth":1,"next":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"path":"case-class-and-pattern-matching.md","ref":"case-class-and-pattern-matching.md","articles":[]},"previous":{"title":"関数","level":"1.13","depth":1,"path":"function.md","ref":"function.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"collection.md","mtime":"2026-07-06T14:40:06.216Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:21.095Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

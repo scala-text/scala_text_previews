@@ -1,0 +1,864 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Javaとの相互運用 · Scala研修テキスト（Scala 2版・archived）</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="exercises.html" />
+    
+    
+    <link rel="prev" href="test.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction-to-scala.html">
+            
+                <a href="introduction-to-scala.html">
+            
+                    
+                    Scalaとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="sbt-install.html">
+            
+                <a href="sbt-install.html">
+            
+                    
+                    sbtをインストールする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    Scalaの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="sbt-compile-execute.html">
+            
+                <a href="sbt-compile-execute.html">
+            
+                    
+                    sbtでプログラムをコンパイル・実行する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="IDE.html">
+            
+                <a href="IDE.html">
+            
+                    
+                    IDE(IntelliJ IDEA)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    記法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="control-syntax.html">
+            
+                <a href="control-syntax.html">
+            
+                    
+                    Scalaの制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="class.html">
+            
+                <a href="class.html">
+            
+                    
+                    クラス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="object.html">
+            
+                <a href="object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="trait.html">
+            
+                <a href="trait.html">
+            
+                    
+                    トレイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="type-parameter.html">
+            
+                <a href="type-parameter.html">
+            
+                    
+                    型パラメータと変位指定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="collection.html">
+            
+                <a href="collection.html">
+            
+                    
+                    コレクションライブラリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="case-class-and-pattern-matching.html">
+            
+                <a href="case-class-and-pattern-matching.html">
+            
+                    
+                    ケースクラスとパターンマッチング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="error-handling.html">
+            
+                <a href="error-handling.html">
+            
+                    
+                    エラー処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="implicit.html">
+            
+                <a href="implicit.html">
+            
+                    
+                    Implicit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="introduction-to-typeclass.html">
+            
+                <a href="introduction-to-typeclass.html">
+            
+                    
+                    型クラスへの誘い
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="future-and-promise.html">
+            
+                <a href="future-and-promise.html">
+            
+                    
+                    FutureとPromise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="test.html">
+            
+                <a href="test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.21" data-path="java-interop.html">
+            
+                <a href="java-interop.html">
+            
+                    
+                    Javaとの相互運用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="exercises.html">
+            
+                <a href="exercises.html">
+            
+                    
+                    S99の案内
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="advanced-trait-di.html">
+            
+                <a href="advanced-trait-di.html">
+            
+                    
+                    トレイトの応用編：依存性の注入によるリファクタリング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="typeclass.html">
+            
+                <a href="typeclass.html">
+            
+                    
+                    付録：様々な型クラスの紹介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Javaとの相互運用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="javaとの相互運用"><a name="javaとの相互運用" class="plugin-anchor" href="#javaとの相互運用"><i class="fa fa-link" aria-hidden="true"></i></a>Javaとの相互運用</h1>
+<h2 id="scalaとjava"><a name="scalaとjava" class="plugin-anchor" href="#scalaとjava"><i class="fa fa-link" aria-hidden="true"></i></a>ScalaとJava</h2>
+<p>ScalaはJVM(Java Virtual Machine)の上で動作するため、JavaのライブラリのほとんどをそのままScalaから呼びだすことができます。また、現状では、Scalaの標準ライブラリだけでは、どうしても必要な機能が足りず、Javaの機能を利用せざるを得ないことがあります。ただし、Javaの機能と言っても、Scalaのそれとほとんど同じように利用することができます。</p>
+<h3 id="import"><a name="import" class="plugin-anchor" href="#import"><i class="fa fa-link" aria-hidden="true"></i></a>import</h3>
+<p>Javaのライブラリをimportするためには、Scalaでほとんど同様のことを記述すればOKです。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+</code></pre>
+<p>ワイルドカードインポートはScala 2では<code>_</code>を、Scala 3では<code>*</code>を使います。</p>
+<p>```scala mdoc:nest:silent
+import java.util._
+import java.util.ArrayList</p>
+<pre><code>
+### インスタンスの生成
+
+インスタンスの生成もJavaと同様にできます。Javaでの
+
+```java
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+</code></pre><p>というコードはScalaでは</p>
+<p>```scala mdoc:nest
+val list = new ArrayList<a href="">String</a></p>
+<pre><code>
+と記述することができます。
+
+#### 練習問題
+
+`java.util.HashSet`クラスのインスタンスを`new`を使って生成してみましょう。
+
+&lt;!-- begin answer id="answer_ex1" style="display:none" --&gt;
+
+```scala mdoc:nest
+import java.util.HashSet
+val set = new HashSet[String]
+</code></pre>
+<h3 id="インスタンスメソッドの呼び出し"><a name="インスタンスメソッドの呼び出し" class="plugin-anchor" href="#インスタンスメソッドの呼び出し"><i class="fa fa-link" aria-hidden="true"></i></a>インスタンスメソッドの呼び出し</h3>
+<p>インスタンスメソッドの呼び出しも同様です。</p>
+<pre><code class="lang-java">list.add(<span class="hljs-string">"Hello"</span>);
+list.add(<span class="hljs-string">"World"</span>);
+</code></pre>
+<p>は</p>
+<p>```scala mdoc:nest
+list.add("Hello")
+list.add("World")</p>
+<pre><code>
+と同じです。
+
+#### 練習問題
+
+```java.lang.System``` クラスのフィールド `out` のインスタンスメソッド `println` を引数 `"Hello, World!"` として呼びだしてみましょう。
+
+&lt;!-- begin answer id="answer_ex2" style="display:none" --&gt;
+
+```scala
+System.out.println("Hello, World!")
+</code></pre>
+<h4 id="staticメソッドの呼び出し"><a name="staticメソッドの呼び出し" class="plugin-anchor" href="#staticメソッドの呼び出し"><i class="fa fa-link" aria-hidden="true"></i></a>staticメソッドの呼び出し</h4>
+<p>staticメソッドの呼び出しもJavaの場合とほとんど同様にできますが、1つ注意点があります。それは、Scalaではstaticメソッドは継承されない（というよりstaticメソッドという概念がない）ということです。これは、クラスAがstaticメソッドfooを持っていたとして、Aを継承したBに対して<code>B.foo()</code>とすることはできず、<code>A.foo()</code>としなければならないという事を意味します。それ以外の点についてはJavaの場合とほぼ同じです。</p>
+<p>現在時刻をミリ秒単位で取得する<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#currentTimeMillis%28%29" target="_blank"><code>System.currentTimeMillis()</code></a>をScalaから呼び出してみましょう。</p>
+<pre><code>scala&gt; System.currentTimeMillis()
+res0: Long = 1416357548906
+</code></pre><p>表示される値はみなさんのマシンにおける時刻に合わせて変わりますが、問題なく呼び出せているはずです。</p>
+<h5 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h5>
+<p><code>java.lang.System</code>クラスのstaticメソッド<code>exit()</code>を引数 <code>0</code>  として呼びだしてみましょう。どのような結果になるでしょうか。</p>
+<div><button type="button" id="answer_ex3_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex3').style.display='block'; document.getElementById('answer_ex3_show_answer_button').style.display='none'; document.getElementById('answer_ex3_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex3_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex3').style.display='none'; document.getElementById('answer_ex3_show_answer_button').style.display='block'; document.getElementById('answer_ex3_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex3" style="display:none">
+<pre><code class="lang-scala"><span class="hljs-type">System</span>.exit(<span class="hljs-number">0</span>)
+</code></pre>
+<p>実行中のScalaプログラム（プロセス）が終了する。</p>
+</div>
+<h4 id="staticフィールドの参照"><a name="staticフィールドの参照" class="plugin-anchor" href="#staticフィールドの参照"><i class="fa fa-link" aria-hidden="true"></i></a>staticフィールドの参照</h4>
+<p>staticフィールドの参照もJavaの場合と基本的に同じですが、staticメソッドの場合と同じ注意点が当てはまります。つまり、staticフィールドは継承されない、ということです。たとえば、Javaでは <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/JFrame.html" target="_blank"><code>JFrame.EXIT_ON_CLOSE</code></a> が継承されることを利用して、</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> javax.swing.JFrame;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyFrame</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JFrame</span> {
+  <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyFrame</span><span class="hljs-params">()</span> {
+    setDefaultCloseOperation(EXIT_ON_CLOSE); <span class="hljs-comment">//JFrameを継承しているので、EXIT_ON_CLOSEだけでOK</span>
+  }
+}
+</code></pre>
+<p>のようなコードを書くことができますが、Scalaでは同じように書くことができず、</p>
+<p>```scala mdoc
+import javax.swing.JFrame</p>
+<p>class MyFrame extends JFrame {
+  // EXIT_ON_CLOSEはJFrameに定義されているわけではなく、
+  // その親のinterfaceに定義されているので
+  setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE)
+}</p>
+<pre><code>
+のように書く必要があります。
+
+現実のプログラミングでは、Scalaの標準ライブラリだけでは必要なライブラリが不足している場面に多々遭遇しますが、そういう場合は既にあるサードパーティのScalaライブラリかJavaライブラリを直接呼びだすのが基本になります。
+
+##### 練習問題
+
+ScalaでJavaのstaticフィールドを参照しなければならない局面を1つ以上挙げてみましょう。
+
+&lt;!-- begin answer id="answer_ex4" style="display:none" --&gt;
+
+`java.lang.System`クラスのstaticフィールド`err`を参照する場合
+
+&lt;!-- end answer --&gt;
+
+#### Scalaの型とJavaの型のマッピング
+
+Javaの型は適切にScalaにマッピングされます。たとえば、`System.currentTimeMillis()`が返す型はlong型ですが、Scalaの標準の型である`scala.Long`にマッピングされます。Scalaの型とJavaの型のマッピングは次のようになります。
+
+&lt;table class="table table-bordered"&gt;
+&lt;caption&gt;Javaのプリミティブ型とScalaの型のマッピング&lt;/caption&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Javaの型&lt;/td&gt; &lt;td&gt;Scalaの型&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;void (厳密にはJavaでvoidは&lt;strong&gt;型ではなく&lt;/strong&gt;ただのキーワードとして扱われていますが、ここでは便宜上型としています)&lt;/td&gt; &lt;td&gt;scala.Unit&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;boolean &lt;/td&gt; &lt;td&gt;scala.Boolean&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;byte &lt;/td&gt; &lt;td&gt;scala.Byte&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;short&lt;/td&gt; &lt;td&gt;scala.Short&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;int&lt;/td&gt; &lt;td&gt;scala.Int&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;long&lt;/td&gt; &lt;td&gt;scala.Long&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;char&lt;/td&gt; &lt;td&gt;scala.Char&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;float&lt;/td&gt; &lt;td&gt;scala.Float&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;double&lt;/td&gt; &lt;td&gt;scala.Double&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;java.lang.Object（プリミティブ型ではありませんが特別な型なので載せました）&lt;/td&gt; &lt;td&gt;scala.AnyRef&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;java.lang.String&lt;/td&gt; &lt;td&gt;java.lang.String&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Javaのすべてのプリミティブ型に対応するScalaの型が用意されていることがわかりますね！　また、`java.lang`パッケージにあるクラスは全てScalaからimport無しに使えます。
+
+また、参照型についてもJava同様にクラス階層の中に組み込まれています。たとえば、Javaで言う`int[]`は`Array[Int]`と書きますが、これは`AnyRef`のサブクラスです。ということは、Scala
+で`AnyRef`と書くことで`Array[Int]`を`AnyRef`型の変数に代入可能です。ユーザが定義したクラスも同様で、基本的に`AnyRef`を継承していることになっています。（ただし、value classというものがあり、それを使った場合は少し事情が異なりますがここでは詳細には触れません）
+
+#### nullとOption
+
+Scalaの世界ではnullを使うことはなく、代わりにOption型を使います。一方で、Javaのメソッドを呼び出したりすると、返り値としてnullが返ってくることがあります。Scalaの世界ではできるだけnullを取り扱いたくないのでこれは少し困ったことです。幸いにも、Scalaでは`Option(value)`とすることで、`value`がnullのときは`None`が、nullでないときは`Some(value)`
+を返すようにできます。
+
+java.util.Mapを使って確かめてみましょう。
+
+```scala mdoc:nest
+val map = new java.util.HashMap[String, Int]()
+
+map.put("A", 1)
+
+map.put("B", 2)
+
+map.put("C", 3)
+
+Option(map.get("A"))
+
+Option(map.get("B"))
+
+Option(map.get("C"))
+
+Option(map.get("D"))
+</code></pre><p>ちゃんとnullがOptionにラップされていることがわかります。Scalaの世界からJavaのメソッドを呼びだすときは、返り値をできるだけ
+Option()でくるむように意識しましょう。</p>
+<h4 id="scalajdkcollectionconverters"><a name="scalajdkcollectionconverters" class="plugin-anchor" href="#scalajdkcollectionconverters"><i class="fa fa-link" aria-hidden="true"></i></a><code>scala.jdk.CollectionConverters</code></h4>
+<p>JavaのコレクションとScalaのコレクションはインタフェースに互換性がありません。これでは、ScalaのコレクションをJavaのコレクションに渡したり、逆に返ってきたJavaのコレクションをScalaのコレクションに変換したい場合に不便です。そのような場合に便利なのが<code>scala.jdk.CollectionConverters</code>です。
+Scala 2.12以前は同様の機能は<code>scala.collection.JavaConverters</code>で提供されていましたが、Scala 2.13以降はそれが非推奨になりました。使い方はいたって簡単で、</p>
+<p>```scala mdoc:nest:silent
+import scala.jdk.CollectionConverters._</p>
+<pre><code>
+とするだけです。これで、JavaとScalaのコレクションのそれぞれに`asJava()`や`asScala()`といったメソッドが追加されるのでそのメソッドを以下のように呼び出せば良いです。
+
+```scala mdoc:nest
+import scala.jdk.CollectionConverters._
+import java.util.ArrayList
+
+val list = new ArrayList[String]()
+
+list.add("A")
+
+list.add("B")
+
+val scalaList = list.asScala
+</code></pre><p>BufferはScalaの変更可能なリストのスーパークラスですが、ともあれ、asScalaメソッドによってJavaのコレクションをScalaのそれに変換することができていることがわかります。そのほかのコレクションについても同様に変換できますが、詳しくは<a href="https://www.scala-lang.org/api/current/scala/jdk/CollectionConverters$.html" target="_blank">APIドキュメント</a>を参照してください。</p>
+<p>また、<code>scala.jdk</code>パッケージには、コレクションの変換以外の機能も提供されています。</p>
+<h5 id="練習問題"><a name="練習問題" class="plugin-anchor" href="#練習問題"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題</h5>
+<p><a href="https://www.scala-lang.org/api/current/scala/collection/mutable/ArrayBuffer.html" target="_blank"><code>scala.collection.mutable.ArrayBuffer</code></a>型の値を生成してから、<code>scala.jdk.CollectionConverters</code>を使って<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" target="_blank">java.util.List</a>型に変換してみましょう。なお、<code>ArrayBuffer</code>には1つ以上の要素を入れておくこととします。</p>
+<div><button type="button" id="answer_ex5_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex5').style.display='block'; document.getElementById('answer_ex5_show_answer_button').style.display='none'; document.getElementById('answer_ex5_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex5_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex5').style.display='none'; document.getElementById('answer_ex5_show_answer_button').style.display='block'; document.getElementById('answer_ex5_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex5" style="display:none">
+<p>```scala mdoc:nest
+import scala.collection.mutable.ArrayBuffer
+import scala.jdk.CollectionConverters._
+val buffer = new ArrayBuffer[String]
+buffer += "A"
+buffer += "B"
+buffer += "C"
+val list = buffer.asJava</p>
+<pre><code>
+&lt;!-- end answer --&gt;
+
+#### ワイルドカードと存在型
+
+Javaでは、
+
+```java
+import java.util.List;
+import java.util.ArrayList;
+List&lt;? extends Object&gt; objects = new ArrayList&lt;String&gt;();
+</code></pre><p>のようにして、クラス宣言時には不変であった型パラメータを共変にしたり、</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Comparator;
+Comparator&lt;? <span class="hljs-built_in">super</span> String&gt; cmp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Object&gt;() {
+  <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Object o1, Object o2)</span> {
+    <span class="hljs-keyword">return</span> o1.hashCode() - o2.hashCode();
+  }
+};
+</code></pre>
+<p>のようにして反変にすることができます。ここで、<code>? extends Object</code> の部分を共変ワイルドカード、
+<code>? super String</code>の部分を反変ワイルドカードと呼びます。より一般的には、このような機能を、利用側で変位指定するという意味でuse-site varianceと呼びます。</p>
+<p>この機能に対応するものとして、Scalaには存在型があります。上記のJavaコードは、Scalaでは次のコードで表現することができます。</p>
+<p>```scala mdoc:nest
+import java.util.{List =&gt; JList, ArrayList =&gt; JArrayList}</p>
+<p>val objects: JList[? &lt;: Object] = new JArrayList<a href="">String</a></p>
+<pre><code>
+```scala mdoc:nest
+import java.util.{Comparator =&gt; JComparator}
+
+val cmp: JComparator[? &gt;: String] = new JComparator[Any] {
+  override def compare(o1: Any, o2: Any): Int = {
+    o1.hashCode() - o2.hashCode()
+  }
+}
+</code></pre><p>より一般的には、<code>G&lt;? extends T&gt;</code> は <code>G[? &lt;: T]</code>に、<code>G&lt;? super T&gt;</code>は <code>G[? &gt;: T]</code> に置き換えることができます。Scalaのプログラム開発において、Javaのワイルドカードを含んだ型を扱いたい場合は、この機能を使いましょう。一方で、Scalaプログラムでは定義側の変位指定、つまりdeclaration-site varianceを使うべきであって、Javaと関係ない部分においてこの機能を使うのはプログラムをわかりにくくするため、避けるべきです。</p>
+<h4 id="sam変換"><a name="sam変換" class="plugin-anchor" href="#sam変換"><i class="fa fa-link" aria-hidden="true"></i></a>SAM変換</h4>
+<p>Scala 2.12ではSAM(Single Abstract Method)変換が導入され<sup><a href="#fn_1" id="reffn_1">1</a></sup>、Java 8のラムダ式を想定したライブラリを簡単に利用できるようになりました。
+Java 8におけるラムダ式とは、関数型インタフェースと呼ばれる、メソッドが1つしかないようなインタフェースに対して無名クラスを簡単に記述できる構文です<sup><a href="#fn_2" id="reffn_2">2</a></sup>。例えば、10の階乗を例にすると以下のように簡潔に書くことができます。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.stream.IntStream;
+<span class="hljs-type">int</span> <span class="hljs-variable">factorial10</span> <span class="hljs-operator">=</span> IntStream.rangeClosed(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>).reduce(<span class="hljs-number">1</span>, (i1, i2) -&gt; i1 * i2);
+</code></pre>
+<p>ちなみに、これをラムダ式を使わずに書くと、以下のようにとても大変です。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.stream.IntStream;
+<span class="hljs-keyword">import</span> java.util.function.IntBinaryOperator;
+<span class="hljs-type">int</span> <span class="hljs-variable">factorial10</span> <span class="hljs-operator">=</span> IntStream.rangeClosed(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>).reduce(<span class="hljs-number">1</span>,
+  <span class="hljs-keyword">new</span> <span class="hljs-title class_">IntBinaryOperator</span>() {
+    <span class="hljs-meta">@Override</span> <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">applyAsInt</span><span class="hljs-params">(<span class="hljs-type">int</span> left, <span class="hljs-type">int</span> right)</span> {
+      <span class="hljs-keyword">return</span> left * right;
+    }
+  });
+</code></pre>
+<p>関数の章で説明したように、元々Scalaにもラムダ式に相当する無名関数という構文があります。しかし、以前のScalaでは<code>FunctionN</code>型が期待される箇所に限定されており、Javaにおいてラムダ式が期待される箇所の大半において使用することができませんでした。例えば、10の階乗の例は<code>IntBinaryOperator</code>型が期待されているので以下のように無名クラスを使う必要がありました。</p>
+<p>```scala mdoc:nest
+import java.util.stream.IntStream;
+import java.util.function.IntBinaryOperator;
+val factorial10 = IntStream.rangeClosed(1, 10).reduce(1,
+  new IntBinaryOperator {
+    def applyAsInt(left: Int, right: Int) = left * right;
+  });</p>
+<pre><code>
+SAM変換を利用すると以下のようにここにも無名関数を利用できるようになります。
+
+```scala mdoc:nest
+import java.util.stream.IntStream;
+val factorial10 = IntStream.rangeClosed(1, 10).reduce(1, _ * _);
+</code></pre><blockquote id="fn_1">
+<sup>1</sup>. 正確には<code>-Xexperimetal</code>オプションにより、Scala 2.11でもSAM変換を有効にすることができます。<a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 厳密に言うと、無名クラスを用いたコードとラムダ式もしくは無名関数を用いたコードの間には、JavaとScalaいずれにおいても細かな違いが存在します。例えば、スコープや出力されるバイトコードなどです。より詳しくは言語仕様などを当たってみてください。<a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+</div></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="test.html" class="navigation navigation-prev " aria-label="Previous page: テスト">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="exercises.html" class="navigation navigation-next " aria-label="Next page: S99の案内">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Javaとの相互運用","level":"1.21","depth":1,"next":{"title":"S99の案内","level":"1.22","depth":1,"path":"exercises.md","ref":"exercises.md","articles":[]},"previous":{"title":"テスト","level":"1.20","depth":1,"path":"test.md","ref":"test.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"java-interop.md","mtime":"2026-07-06T14:40:06.233Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:21.095Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

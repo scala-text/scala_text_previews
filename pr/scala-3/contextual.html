@@ -1,0 +1,978 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Given/Using/Extension · Scala研修テキスト（Scala 3 LTS版）</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-forkmegithub/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="introduction-to-typeclass.html" />
+    
+    
+    <link rel="prev" href="error-handling.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction-to-scala.html">
+            
+                <a href="introduction-to-scala.html">
+            
+                    
+                    Scalaとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="sbt-install.html">
+            
+                <a href="sbt-install.html">
+            
+                    
+                    sbtをインストールする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    Scalaの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="sbt-compile-execute.html">
+            
+                <a href="sbt-compile-execute.html">
+            
+                    
+                    sbtでプログラムをコンパイル・実行する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="IDE.html">
+            
+                <a href="IDE.html">
+            
+                    
+                    IDE(IntelliJ IDEA)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    記法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="control-syntax.html">
+            
+                <a href="control-syntax.html">
+            
+                    
+                    Scalaの制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="class.html">
+            
+                <a href="class.html">
+            
+                    
+                    クラス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="object.html">
+            
+                <a href="object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="trait.html">
+            
+                <a href="trait.html">
+            
+                    
+                    トレイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="type-parameter.html">
+            
+                <a href="type-parameter.html">
+            
+                    
+                    型パラメータと変位指定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="collection.html">
+            
+                <a href="collection.html">
+            
+                    
+                    コレクションライブラリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="case-class-and-pattern-matching.html">
+            
+                <a href="case-class-and-pattern-matching.html">
+            
+                    
+                    列挙型、ケースクラスとパターンマッチング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="error-handling.html">
+            
+                <a href="error-handling.html">
+            
+                    
+                    エラー処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="contextual.html">
+            
+                <a href="contextual.html">
+            
+                    
+                    Given/Using/Extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="introduction-to-typeclass.html">
+            
+                <a href="introduction-to-typeclass.html">
+            
+                    
+                    型クラスへの誘い
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="future-and-promise.html">
+            
+                <a href="future-and-promise.html">
+            
+                    
+                    FutureとPromise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="test.html">
+            
+                <a href="test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="java-interop.html">
+            
+                <a href="java-interop.html">
+            
+                    
+                    Javaとの相互運用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="exercises.html">
+            
+                <a href="exercises.html">
+            
+                    
+                    S99の案内
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="advanced-trait-di.html">
+            
+                <a href="advanced-trait-di.html">
+            
+                    
+                    トレイトの応用編：依存性の注入によるリファクタリング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="scala3-features.html">
+            
+                <a href="scala3-features.html">
+            
+                    
+                    Scala 3で追加された主な機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="typeclass.html">
+            
+                <a href="typeclass.html">
+            
+                    
+                    付録：様々な型クラスの紹介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Given/Using/Extension</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="givenusingextension"><a name="givenusingextension" class="plugin-anchor" href="#givenusingextension"><i class="fa fa-link" aria-hidden="true"></i></a>Given/Using/Extension</h1>
+<p>Scalaには他の言語にはあまり見られない、暗黙的に値や変換をコンパイラに供給する仕組みがあります。Scala 2ではこれらは<code>implicit</code>という単一のキーワードで表現されていましたが、1つの機能で複数の用途を兼ねることがユーザーにとって分かりにくいという反省から、Scala 3では用途ごとに専用のキーワード・構文が用意されています。</p>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>Scala 2</th>
+<th>Scala 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>暗黙の型変換</td>
+<td><code>implicit def</code></td>
+<td><code>given Conversion[A, B]</code></td>
+</tr>
+<tr>
+<td>拡張メソッド（enrich my library）</td>
+<td><code>implicit class</code></td>
+<td><code>extension (x: T)</code></td>
+</tr>
+<tr>
+<td>文脈の暗黙引き渡し</td>
+<td><code>(implicit x: T)</code> 引数</td>
+<td><code>(using x: T)</code> 引数</td>
+</tr>
+<tr>
+<td>型クラスのインスタンス</td>
+<td><code>implicit val/object</code></td>
+<td><code>given X: T with ...</code></td>
+</tr>
+<tr>
+<td>暗黙値の取り出し</td>
+<td><code>implicitly[T]</code></td>
+<td><code>summon[T]</code></td>
+</tr>
+</tbody>
+</table>
+<p>この章ではScala 3でのこれらの使い方を順に説明します。Scala 2の<code>implicit</code>を見たことがある読者には、本章末尾の「Scala 2の<code>implicit</code>との対応」節も合わせて参照してもらえると、Scala 2のコードを読むときに役に立つはずです。</p>
+<h2 id="暗黙の型変換（conversion）"><a name="暗黙の型変換（conversion）" class="plugin-anchor" href="#暗黙の型変換（conversion）"><i class="fa fa-link" aria-hidden="true"></i></a>暗黙の型変換（Conversion）</h2>
+<p>暗黙の型変換は、ユーザーが「ある型から別の型への変換」をコンパイラに登録できる機能です。Scalaが普及し始めた時期にはこの機能が多用されたのですが、多用するとプログラムが読みづらくなることが分かったため、現在は積極的に使うことは推奨されていません。とはいえ、固定長整数から多倍長整数への変換など、標準ライブラリやサードパーティのライブラリで使われているケースもあるので知っておく価値はあります。</p>
+<p>Scala 3で暗黙の型変換を定義するには、<code>scala.Conversion[A, B]</code>型の<code>given</code>インスタンスを定義します。</p>
+<pre><code class="lang-scala">  <span class="hljs-keyword">given</span> インスタンス名: <span class="hljs-type">Conversion</span>[引数の型, 返り値の型] = 引数 =&gt; 本体
+</code></pre>
+<p>引数の型の式が現れたときに、コンパイラが暗黙のうちに返り値の型への変換を挿入してくれます。次の例では、<code>Int</code>型から<code>Boolean</code>型への暗黙の型変換を定義しています。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> scala.language.implicitConversions
+
+<span class="hljs-keyword">given</span> intToBoolean: <span class="hljs-type">Conversion</span>[<span class="hljs-type">Int</span>, <span class="hljs-type">Boolean</span>] = arg =&gt; arg != <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-number">1</span> <span class="hljs-keyword">then</span> {
+  println(<span class="hljs-string">"1は真なり"</span>)
+}
+<span class="hljs-comment">// 1は真なり</span>
+</code></pre>
+<p>コンパイラは<code>if 1 then ...</code>を見た時点で、本来<code>Boolean</code>が要求されているのに<code>Int</code>型の式である<code>1</code>が書かれていることに気づきます。多くの静的型付き言語ではここで型エラーになります。しかしScalaでは、引数が<code>Int</code>で返り値が<code>Boolean</code>の暗黙の型変換が定義されていないか探索し、上で定義した<code>intToBoolean</code>を発見します。そしてコンパイラはコードを次のように書き換えたかのように扱います。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">if</span> intToBoolean(<span class="hljs-number">1</span>) <span class="hljs-keyword">then</span> {
+  println(<span class="hljs-string">"1は真なり"</span>)
+}
+<span class="hljs-comment">// 1は真なり</span>
+</code></pre>
+<p>これによって、<code>if</code>の条件式に<code>Int</code>を渡せるようになるわけです。ただし、暗黙の型変換のこのような使い方はあまり良いものではありません。if式の条件に<code>Boolean</code>しか渡せないようになっているのは間違いを防止するためなのに、そのチェックを通り抜けてしまえるわけですから。</p>
+<p>なお、Scala 3では暗黙の型変換を使うために<code>import scala.language.implicitConversions</code>が必要です。これは「暗黙の型変換は強力すぎて誤用しやすいので、明示的にオプトインしてほしい」という意図に基づくものです。</p>
+<p><code>BigInt</code>や<code>BigDecimal</code>など一部のライブラリではScala標準の<code>Int</code>や<code>Double</code>と相互に変換するために暗黙の型変換を定義していますが、普通のユーザーが定義する必要があることは稀です。正当な理由を思いつかない限りは使わないようにしましょう。</p>
+<h2 id="拡張メソッド（extension）"><a name="拡張メソッド（extension）" class="plugin-anchor" href="#拡張メソッド（extension）"><i class="fa fa-link" aria-hidden="true"></i></a>拡張メソッド（Extension）</h2>
+<p>C#やKotlinなどにある「拡張メソッド」と同等の機能を、Scalaでは伝統的に <em>Enrich my library パターン</em> と呼んできました。既存のクラスにメソッドを追加したように見せかけることができ、Scala標準ライブラリの中にも利用例がありますし、サードパーティのライブラリでもよく見かけます。</p>
+<p>たとえば、これまで見たプログラムの中には<code>(1 to 5)</code>という式がありましたが、本来<code>Int</code>型は<code>to</code>というメソッドを持っていません。<code>to</code>はまさに拡張メソッドの典型的な利用例で、<code>Int</code>に対して暗黙的にメソッドが追加されているのです。</p>
+<p>Scala 3では拡張メソッドを定義するための専用構文として<code>extension</code>が用意されています。試しに、<code>String</code>の末尾に<code>":-)"</code>という文字列を追加して返す<code>smile</code>メソッドを定義してみましょう。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">extension</span> (src: <span class="hljs-type">String</span>) {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smile</span></span>: <span class="hljs-type">String</span> = src + <span class="hljs-string">":-)"</span>
+}
+
+<span class="hljs-string">"Hi, "</span>.smile
+<span class="hljs-comment">// res3: String = "Hi, :-)"</span>
+</code></pre>
+<p><code>extension (src: String)</code>は「<code>String</code>型に対してメソッドを追加する」という意図を端的に表しています。ブロック内に複数のメソッドを並べて書くこともできますし、型パラメータを取ることもできます。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">extension</span> [<span class="hljs-type">A</span>](self: <span class="hljs-type">A</span>) {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tap</span></span>[<span class="hljs-type">U</span>](block: <span class="hljs-type">A</span> =&gt; <span class="hljs-type">U</span>): <span class="hljs-type">A</span> = {
+    block(self)
+    self
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pipe</span></span>[<span class="hljs-type">B</span>](f: <span class="hljs-type">A</span> =&gt; <span class="hljs-type">B</span>): <span class="hljs-type">B</span> = f(self)
+}
+
+<span class="hljs-string">"Hello, World"</span>.tap(println).reverse.tap(println)
+<span class="hljs-comment">// Hello, World</span>
+<span class="hljs-comment">// dlroW ,olleH</span>
+<span class="hljs-comment">// res5: String = "dlroW ,olleH"</span>
+<span class="hljs-string">"abc"</span>.pipe(_.toUpperCase)
+<span class="hljs-comment">// res6: String = "ABC"</span>
+</code></pre>
+<p><code>extension</code>は、拡張メソッドを定義したいという意図を構文レベルで表現できるため、Scala 2の<code>implicit class</code>より分かりやすく、誤用も起きにくくなっています。</p>
+<h3 id="contextual_ex1"><a name="contextual_ex1" class="plugin-anchor" href="#contextual_ex1"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題 </h3>
+<p><code>Int</code>から<code>BigInt</code>への暗黙の型変換のように、利用者にとって便利になる変換を1つ考えて<code>given Conversion[A, B]</code>として定義してみてください。その変換にはどのような利点と欠点があるかを答えてください。</p>
+<h3 id="contextual_ex2"><a name="contextual_ex2" class="plugin-anchor" href="#contextual_ex2"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題 </h3>
+<p>既存のクラスに対し、<code>extension</code>構文を使って便利なメソッドを追加してみましょう。どのような場面で役に立つでしょうか？</p>
+<div><button type="button" id="answer_ex1_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex1').style.display='block'; document.getElementById('answer_ex1_show_answer_button').style.display='none'; document.getElementById('answer_ex1_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex1_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex1').style.display='none'; document.getElementById('answer_ex1_show_answer_button').style.display='block'; document.getElementById('answer_ex1_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex1" style="display:none">
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Taps</span> </span>{
+  <span class="hljs-keyword">extension</span> [<span class="hljs-type">T</span>](self: <span class="hljs-type">T</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tap</span></span>[<span class="hljs-type">U</span>](block: <span class="hljs-type">T</span> =&gt; <span class="hljs-type">U</span>): <span class="hljs-type">T</span> = {
+      block(self) <span class="hljs-comment">//値は捨てる</span>
+      self
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]): <span class="hljs-type">Unit</span> = {
+    <span class="hljs-string">"Hello, World"</span>.tap{s =&gt; println(s)}.reverse.tap{s =&gt; println(s)}
+  }
+}
+</code></pre>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> <span class="hljs-type">Taps</span>.*
+<span class="hljs-type">Taps</span>.main(<span class="hljs-type">Array</span>())
+<span class="hljs-comment">// Hello, World</span>
+<span class="hljs-comment">// dlroW ,olleH</span>
+</code></pre>
+<p>定義した<code>tap</code>メソッドはRubyなどの言語にありますが、メソッドチェインの中でデバッグプリントをはさみたいときに役に立ちます。</p>
+</div>
+<h3 id="contextual_ex3"><a name="contextual_ex3" class="plugin-anchor" href="#contextual_ex3"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題 </h3>
+<p><a href="https://www.scala-lang.org/api/current/index.html" target="_blank">Scala標準ライブラリ</a>の中から拡張メソッド（<code>extension</code>または<code>implicit class</code>）が使われている例を1つ以上見つけてください。どのような時に便利でしょうか？</p>
+<h2 id="using引数（文脈の暗黙引き渡し）"><a name="using引数（文脈の暗黙引き渡し）" class="plugin-anchor" href="#using引数（文脈の暗黙引き渡し）"><i class="fa fa-link" aria-hidden="true"></i></a>using引数（文脈の暗黙引き渡し）</h2>
+<p><code>using</code>引数は、メソッド呼び出しのたびに毎回書きたくない「文脈オブジェクト」を、コンパイラに自動で引き渡してもらう仕組みです。たとえば、ソケットやデータベースのコネクションのように、あちこちのメソッドに共通で渡されるオブジェクトに使うと便利です。</p>
+<p>データベースとのコネクションを表す<code>Connection</code>型があるとします。データベースと接続するメソッドには全て<code>Connection</code>型を渡さなければなりません。</p>
+<pre><code>def readRecordsFromTable(columnName: String, tableName: String, connection: Connection): List[Record]
+def writeRecordsToTable(record: List[Record], tableName: String, connection: Connection): Unit
+def readAllFromTable(tableName: String, connection: Connection): List[Record]
+</code></pre><p>3つのメソッドは全て<code>Connection</code>型を引数に取るのに、呼び出すたびに明示的に<code>Connection</code>オブジェクトを渡さなければいけません。ここで<code>using</code>引数の出番です。上のメソッド定義を</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">readRecordsFromTable</span></span>(columnName: <span class="hljs-type">String</span>, tableName: <span class="hljs-type">String</span>)(<span class="hljs-keyword">using</span> connection: <span class="hljs-type">Connection</span>): <span class="hljs-type">List</span>[<span class="hljs-type">Record</span>]
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writeRecordsToTable</span></span>(records: <span class="hljs-type">List</span>[<span class="hljs-type">Record</span>], tableName: <span class="hljs-type">String</span>)(<span class="hljs-keyword">using</span> connection: <span class="hljs-type">Connection</span>): <span class="hljs-type">Unit</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">readAllFromTable</span></span>(tableName: <span class="hljs-type">String</span>)(<span class="hljs-keyword">using</span> connection: <span class="hljs-type">Connection</span>): <span class="hljs-type">List</span>[<span class="hljs-type">Record</span>]
+</code></pre>
+<p>と書き換えます。Scala 3では<code>using</code>引数リストは複数書いたり途中の位置に置いたりできますが、通常は最後の引数リストとして書きます。つまり、以下のようになっているのがポイントです。</p>
+<pre><code class="lang-scala">(....)(<span class="hljs-keyword">using</span> conn: <span class="hljs-type">Connection</span>)
+</code></pre>
+<p><code>using</code>引数は名前を省略することもできます。メソッド内部で使う必要がなければ型だけ書けば十分です。</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">readRecordsFromTable</span></span>(columnName: <span class="hljs-type">String</span>, tableName: <span class="hljs-type">String</span>)(<span class="hljs-keyword">using</span> <span class="hljs-type">Connection</span>): <span class="hljs-type">List</span>[<span class="hljs-type">Record</span>]
+</code></pre>
+<p>このように定義されたメソッドが呼び出されると、Scalaコンパイラは現在の呼び出しスコープからたどって、適切な型の<code>given</code>値を探索し、暗黙にメソッドへ引き渡します。たとえば次のようにして、値を<code>given</code>としてマークします。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">given</span> aConnection: <span class="hljs-type">Connection</span> = connectDatabase(....)
+</code></pre>
+<p>こうすれば、最後の引数リストに暗黙のうちに<code>Connection</code>オブジェクトを渡してくれます。以下のような呼び出しがあったとします。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> firstNames = readRecordsFromTable(<span class="hljs-string">"first_name"</span>, <span class="hljs-string">"people"</span>)
+</code></pre>
+<p>この呼び出しは次のように変換されます。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> firstNames = readRecordsFromTable(<span class="hljs-string">"first_name"</span>, <span class="hljs-string">"people"</span>)(<span class="hljs-keyword">using</span> aConnection)
+</code></pre>
+<p>呼び出し側で明示的に<code>using</code>を書きたい場合は、<code>readRecordsFromTable("first_name", "people")(using aConnection)</code>のように指定できます。</p>
+<p>このような文脈を引き渡すための<code>using</code>引数は、Play FrameworkやO/Rマッパー、あるいは<code>ExecutionContext</code>（<a href="future-and-promise.html">FutureとPromiseの章</a>で登場します）のような実行コンテキストを必要とするライブラリでよく出てきます。</p>
+<h2 id="型クラスとgivenusingsummon"><a name="型クラスとgivenusingsummon" class="plugin-anchor" href="#型クラスとgivenusingsummon"><i class="fa fa-link" aria-hidden="true"></i></a>型クラスとgiven/using/summon</h2>
+<p><code>using</code>引数のもう1つの使い方は風変わりです。Haskellなどの型クラスがある言語をご存知の人なら、型クラスそのものであると言う説明が分かりやすいかもしれません。多くの読者は型クラスについては知らないと思いますから、ここでは一から説明します。</p>
+<p><code>List</code>の全ての要素の値を加算した結果を返す<code>sum</code>メソッドを定義したいとします。このような要求は頻繁にあるので、定義できれば嬉しいことは間違いありません。問題はそのようなメソッドを素直に定義できない点にあります。</p>
+<p>ポイントは「何の」<code>List</code>か全く分かっていないことです。何のリストか分からないということは、整数や浮動小数点数の<code>+</code>メソッドをそのまま使うことはできないということです。このような時に<code>using</code>引数の出番です。</p>
+<p>2つの同じ型を足す（0の場合はそれに相当する値を返す）方法を知っている型を定義します。ここではその型を<code>Additive</code>とします。<code>Additive</code>の定義は次のようになります。</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">A</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">A</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">A</span>, b: <span class="hljs-type">A</span>): <span class="hljs-type">A</span>
+}
+</code></pre>
+<p><code>Additive</code>の型パラメータ<code>A</code>は加算される<code>List</code>の要素型を表しています。また、</p>
+<ul>
+<li><code>zero</code>：型パラメータ<code>A</code>の<strong>0</strong>に相当する値を返す</li>
+<li><code>plus()</code>：型パラメータ<code>A</code>を持つ2つの値を<strong>加算して</strong>返す</li>
+</ul>
+<p>です。</p>
+<p>次に<code>Additive</code>型を使って、<code>List</code>の全ての要素を合計するメソッドを定義します。</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span></span>[<span class="hljs-type">A</span>](lst: <span class="hljs-type">List</span>[<span class="hljs-type">A</span>])(a: <span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]) = lst.foldLeft(a.zero)((x, y) =&gt; a.plus(x, y))
+</code></pre>
+<p>最後に、型に応じた<code>zero</code>と<code>plus()</code>の定義を持ったオブジェクトを定義します。ここでは<code>String</code>と<code>Int</code>について、<code>Additive[Int]</code>と<code>Additive[String]</code>を定義します。</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">StringAdditive</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">String</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">String</span>, b: <span class="hljs-type">String</span>): <span class="hljs-type">String</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">String</span> = <span class="hljs-string">""</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">IntAdditive</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">Int</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>): <span class="hljs-type">Int</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">Int</span> = <span class="hljs-number">0</span>
+}
+</code></pre>
+<p>まとめると次のようになります。</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">A</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">A</span>, b: <span class="hljs-type">A</span>): <span class="hljs-type">A</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">A</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">StringAdditive</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">String</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">String</span>, b: <span class="hljs-type">String</span>): <span class="hljs-type">String</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">String</span> = <span class="hljs-string">""</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">IntAdditive</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">Int</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>): <span class="hljs-type">Int</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">Int</span> = <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span></span>[<span class="hljs-type">A</span>](lst: <span class="hljs-type">List</span>[<span class="hljs-type">A</span>])(a: <span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]) = lst.foldLeft(a.zero)((x, y) =&gt; a.plus(x, y))
+</code></pre>
+<p><code>List[Int]</code>型と<code>List[String]</code>型のどちらでも、要素の合計を計算できる汎用的な<code>sum</code>メソッドができました。</p>
+<p>実際に呼び出したいときには、</p>
+<pre><code class="lang-scala">sum(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))(<span class="hljs-type">IntAdditive</span>)
+<span class="hljs-comment">// res8: Int = 6</span>
+sum(<span class="hljs-type">List</span>(<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>))(<span class="hljs-type">StringAdditive</span>)
+<span class="hljs-comment">// res9: String = "ABC"</span>
+</code></pre>
+<p>とすれば良いだけです。</p>
+<p>これで目的を果たすことはできますが、何の<code>List</code>の要素を合計するかは型チェックする時点では分かっているのだから、<code>IntAdditive</code>や<code>StringAdditive</code>を明示的に渡さずとも賢く推論してほしいものです。実は、まさにそれを<code>using</code>引数と<code>given</code>定義で実現することができるのです。</p>
+<p>方法は簡単。<code>StringAdditive</code>と<code>IntAdditive</code>を<code>given</code>として定義することと、<code>sum</code>の最後の引数リストを<code>using</code>引数にするだけです。<code>given</code>を使った最終形は次のようになります。</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">A</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">A</span>, b: <span class="hljs-type">A</span>): <span class="hljs-type">A</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">A</span>
+}
+
+<span class="hljs-keyword">given</span> <span class="hljs-type">StringAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">String</span>] <span class="hljs-keyword">with</span> {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">String</span>, b: <span class="hljs-type">String</span>): <span class="hljs-type">String</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">String</span> = <span class="hljs-string">""</span>
+}
+
+<span class="hljs-keyword">given</span> <span class="hljs-type">IntAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>] <span class="hljs-keyword">with</span> {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>): <span class="hljs-type">Int</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">Int</span> = <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span></span>[<span class="hljs-type">A</span>](lst: <span class="hljs-type">List</span>[<span class="hljs-type">A</span>])(<span class="hljs-keyword">using</span> m: <span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]) = lst.foldLeft(m.zero)((x, y) =&gt; m.plus(x, y))
+
+sum(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+<span class="hljs-comment">// res10: Int = 6</span>
+
+sum(<span class="hljs-type">List</span>(<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>))
+<span class="hljs-comment">// res11: String = "ABC"</span>
+</code></pre>
+<p>任意のListの要素の合計値を求めるsumメソッドを自然な形で呼び出すことができています。</p>
+<p><code>given X: T with { ... }</code>はScala 3で型クラスのインスタンスを定義する標準的な形です。<code>with</code>の後ろのブロックに、その型クラスが要求するメソッドを実装します。インスタンスに名前を付けたくない場合は、<code>given Additive[Int] with { ... }</code>のように匿名で書くこともできます。</p>
+<p>このような<code>using</code>引数と型クラスの組み合わせはプログラミング言語Haskellから借りてきたもので、Haskellでは型クラスと呼ばれます。そのため、Scalaでも型クラスと呼ばれることがよくあります。Haskellの用語だと、<code>Additive</code>に相当する宣言を <strong>型クラスの宣言</strong>、<code>StringAdditive</code>と<code>IntAdditive</code>を <code>Additive</code>型クラスの <strong>インスタンスの定義</strong> と呼びます。</p>
+<p>なお、メソッドの本体から型クラスインスタンスを参照したいだけで、引数名を付けるのが冗長な場合は、<code>using</code>引数の名前を省略して<code>summon</code>で取り出すこともできます。</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum2</span></span>[<span class="hljs-type">A</span>](lst: <span class="hljs-type">List</span>[<span class="hljs-type">A</span>])(<span class="hljs-keyword">using</span> <span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]): <span class="hljs-type">A</span> = {
+  <span class="hljs-keyword">val</span> m = summon[<span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]]
+  lst.foldLeft(m.zero)((x, y) =&gt; m.plus(x, y))
+}
+</code></pre>
+<p><code>summon[T]</code>はScala 2の<code>implicitly[T]</code>に対応するもので、現在のスコープから型<code>T</code>の<code>given</code>値を取り出します。</p>
+<p>さらに、型パラメータの直後で<code>using</code>引数を要求する短縮記法として <strong>コンテキスト境界（context bound）</strong> があります。<code>def sum[A: Additive](lst: List[A]): A</code>と書けば、暗黙のうちに<code>Additive[A]</code>を要求する<code>using</code>引数が追加されたかのように扱われます。</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum3</span></span>[<span class="hljs-type">A</span>: <span class="hljs-type">Additive</span>](lst: <span class="hljs-type">List</span>[<span class="hljs-type">A</span>]): <span class="hljs-type">A</span> = {
+  <span class="hljs-keyword">val</span> m = summon[<span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]]
+  lst.foldLeft(m.zero)((x, y) =&gt; m.plus(x, y))
+}
+
+sum3(<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+<span class="hljs-comment">// res12: Int = 6</span>
+sum3(<span class="hljs-type">List</span>(<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>))
+<span class="hljs-comment">// res13: String = "ABC"</span>
+</code></pre>
+<p>型クラスを使った設計は標準ライブラリにも見られます。たとえば、</p>
+<pre><code class="lang-scala"><span class="hljs-type">List</span>[<span class="hljs-type">Int</span>]().sum
+<span class="hljs-comment">// res14: Int = 0</span>
+
+<span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>).sum
+<span class="hljs-comment">// res15: Int = 10</span>
+
+<span class="hljs-type">List</span>(<span class="hljs-number">1.1</span>, <span class="hljs-number">1.2</span>, <span class="hljs-number">1.3</span>, <span class="hljs-number">1.4</span>).sum
+<span class="hljs-comment">// res16: Double = 5.0</span>
+</code></pre>
+<p>のように整数や浮動小数点数の合計値を計算することができます。これは、対応する型クラスのインスタンスが標準ライブラリに用意されているおかげです。Scalaで型クラスを定義・使用する方法を覚えると、設計の幅がグンと広がります。</p>
+<h3 id="contextual_ex4"><a name="contextual_ex4" class="plugin-anchor" href="#contextual_ex4"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題 </h3>
+<p><code>m: Additive[T]</code>と値<code>t1: T, t2: T, t3: T</code>は、次の条件を満たす必要があります。</p>
+<pre><code class="lang-scala">m.plus(m.zero, t1) == t1  <span class="hljs-comment">// 単位元</span>
+m.plus(t1, m.zero) == t1  <span class="hljs-comment">// 単位元</span>
+m.plus(t1, m.plus(t2, t3)) == m.plus(m.plus(t1, t2), t3) <span class="hljs-comment">// 結合則</span>
+</code></pre>
+<p>条件を満たす型<code>T</code>と単位元<code>zero</code>、演算<code>plus</code>を探し出し、<code>Additive[T]</code>を定義しましょう。また、条件が満たされていることを確認してみましょう。定義した<code>Additive[T]</code>を<code>given</code>として宣言して、<code>T</code>の合計値を先ほどの<code>sum</code>で計算できることも確かめてみましょう。</p>
+<p>ヒント：条件を満たす型は無数にありますが、たとえば<code>x</code>座標と<code>y</code>座標からなる点を表すクラス<code>Point</code>を考えてみると良いでしょう。</p>
+<div><button type="button" id="answer_ex2_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex2').style.display='block'; document.getElementById('answer_ex2_show_answer_button').style.display='none'; document.getElementById('answer_ex2_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex2_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex2').style.display='none'; document.getElementById('answer_ex2_show_answer_button').style.display='block'; document.getElementById('answer_ex2_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex2" style="display:none">
+<pre><code class="lang-scala">
+<span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">A</span>] </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">A</span>, b: <span class="hljs-type">A</span>): <span class="hljs-type">A</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">A</span>
+}
+
+<span class="hljs-keyword">given</span> <span class="hljs-type">StringAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">String</span>] <span class="hljs-keyword">with</span> {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">String</span>, b: <span class="hljs-type">String</span>): <span class="hljs-type">String</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">String</span> = <span class="hljs-string">""</span>
+}
+
+<span class="hljs-keyword">given</span> <span class="hljs-type">IntAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>] <span class="hljs-keyword">with</span> {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>): <span class="hljs-type">Int</span> = a + b
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">Int</span> = <span class="hljs-number">0</span>
+}
+
+<span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>(<span class="hljs-params">x: <span class="hljs-type">Int</span>, y: <span class="hljs-type">Int</span></span>)</span>
+
+<span class="hljs-keyword">given</span> <span class="hljs-type">PointAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">Point</span>] <span class="hljs-keyword">with</span> {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">Point</span>, b: <span class="hljs-type">Point</span>): <span class="hljs-type">Point</span> = <span class="hljs-type">Point</span>(a.x + b.x, a.y + b.y)
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">Point</span> = <span class="hljs-type">Point</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span></span>[<span class="hljs-type">A</span>](lst: <span class="hljs-type">List</span>[<span class="hljs-type">A</span>])(<span class="hljs-keyword">using</span> m: <span class="hljs-type">Additive</span>[<span class="hljs-type">A</span>]) = lst.foldLeft(m.zero)((x, y) =&gt; m.plus(x, y))
+</code></pre>
+<pre><code class="lang-scala">println(sum(<span class="hljs-type">List</span>(<span class="hljs-type">Point</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), <span class="hljs-type">Point</span>(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), <span class="hljs-type">Point</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)))) <span class="hljs-comment">// Point(6, 6)</span>
+<span class="hljs-comment">// Point(6,6)</span>
+println(sum(<span class="hljs-type">List</span>(<span class="hljs-type">Point</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), <span class="hljs-type">Point</span>(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), <span class="hljs-type">Point</span>(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>)))) <span class="hljs-comment">// Point(9, 12)</span>
+<span class="hljs-comment">// Point(9,12)</span>
+</code></pre>
+</div>
+<h3 id="contextual_ex5"><a name="contextual_ex5" class="plugin-anchor" href="#contextual_ex5"><i class="fa fa-link" aria-hidden="true"></i></a>練習問題 </h3>
+<p><code>List[Int]</code> と <code>List[Double]</code> のsumを行うために、標準ライブラリでは何という型クラス（1つ）と型クラスのインスタンスを定義しているかを、<a href="https://www.scala-lang.org/api/current/index.html" target="_blank">Scala標準ライブラリ</a>から探して挙げなさい。</p>
+<div><button type="button" id="answer_ex3_show_answer_button" style="display:block" onclick="document.getElementById('answer_ex3').style.display='block'; document.getElementById('answer_ex3_show_answer_button').style.display='none'; document.getElementById('answer_ex3_hide_answer_button').style.display='block'; ">解答例を表示する</button><button type="button" id="answer_ex3_hide_answer_button" style="display:none" onclick="document.getElementById('answer_ex3').style.display='none'; document.getElementById('answer_ex3_show_answer_button').style.display='block'; document.getElementById('answer_ex3_hide_answer_button').style.display='none'; ">解答例を隠す</button></div><div id="answer_ex3" style="display:none">
+<p>型クラス：</p>
+<ul>
+<li><a href="https://www.scala-lang.org/api/current/scala/math/Numeric.html" target="_blank">Numeric[T]</a></li>
+</ul>
+<p>型クラスのインスタンス：</p>
+<ul>
+<li><a href="https://www.scala-lang.org/api/current/scala/math/Numeric$$IntIsIntegral$.html" target="_blank">IntIsIntegral</a></li>
+<li><a href="https://www.scala-lang.org/api/current/scala/math/Numeric$$DoubleIsFractional$.html" target="_blank">DoubleIsFractional</a></li>
+</ul>
+</div>
+<h3 id="givenの探索範囲"><a name="givenの探索範囲" class="plugin-anchor" href="#givenの探索範囲"><i class="fa fa-link" aria-hidden="true"></i></a>givenの探索範囲</h3>
+<p><code>given</code>値の探索範囲には、</p>
+<ul>
+<li>ローカルで<code>given</code>定義されたもの、または<code>using</code>引数として受け取っているもの</li>
+<li>importで取り込まれたもの（<code>import obj.given</code>で全ての<code>given</code>を取り込めます）</li>
+<li>スーパークラスやスーパートレイトで定義されたもの</li>
+<li>コンパニオンオブジェクトで定義されたもの</li>
+</ul>
+<p>などがあります。この中で注目していただきたいのが、コンパニオンオブジェクトに<code>given</code>値を定義するパターンです。</p>
+<p>たとえば新しく<code>Rational</code>（有理数）型を定義したとして、コンパニオンオブジェクトに先ほど使った<code>Additive</code>型クラスのインスタンスを定義しておきます。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rational</span>(<span class="hljs-params">num: <span class="hljs-type">Int</span>, den: <span class="hljs-type">Int</span></span>)</span>
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Rational</span> </span>{
+  <span class="hljs-keyword">given</span> <span class="hljs-type">RationalAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">Rational</span>] <span class="hljs-keyword">with</span> {
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span></span>(a: <span class="hljs-type">Rational</span>, b: <span class="hljs-type">Rational</span>): <span class="hljs-type">Rational</span> = {
+      <span class="hljs-keyword">if</span> a == zero <span class="hljs-keyword">then</span> {
+        b
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> b == zero <span class="hljs-keyword">then</span> {
+        a
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-type">Rational</span>(a.num * b.den + b.num * a.den, a.den * b.den)
+      }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero</span></span>: <span class="hljs-type">Rational</span> = <span class="hljs-type">Rational</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+  }
+}
+</code></pre>
+<p>importをしていないのに、Additive型クラスのインスタンスを使うことができます。</p>
+<pre><code class="lang-scala">scala&gt; sum(<span class="hljs-type">List</span>(<span class="hljs-type">Rational</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), <span class="hljs-type">Rational</span>(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)))
+<span class="hljs-keyword">val</span> res0: <span class="hljs-type">Rational</span> = <span class="hljs-type">Rational</span>(<span class="hljs-number">4</span>,<span class="hljs-number">2</span>)
+</code></pre>
+<p>新しくデータ型を定義し、型クラスインスタンスも一緒に定義したい場合によく出てくるパターンなので覚えておくとよいでしょう。</p>
+<h2 id="scala-2のimplicitとの対応"><a name="scala-2のimplicitとの対応" class="plugin-anchor" href="#scala-2のimplicitとの対応"><i class="fa fa-link" aria-hidden="true"></i></a>Scala 2の<code>implicit</code>との対応</h2>
+<p>既存のScala 2コードや古い解説記事を読む際の手助けとして、Scala 2の<code>implicit</code>構文とScala 3での対応する書き方を整理しておきます。</p>
+<pre><code class="lang-scala"><span class="hljs-comment">// 暗黙の型変換</span>
+<span class="hljs-comment">// Scala 2:</span>
+<span class="hljs-keyword">implicit</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">intToBoolean</span></span>(arg: <span class="hljs-type">Int</span>): <span class="hljs-type">Boolean</span> = arg != <span class="hljs-number">0</span>
+<span class="hljs-comment">// Scala 3:</span>
+<span class="hljs-keyword">given</span> intToBoolean: <span class="hljs-type">Conversion</span>[<span class="hljs-type">Int</span>, <span class="hljs-type">Boolean</span>] = arg =&gt; arg != <span class="hljs-number">0</span>
+</code></pre>
+<pre><code class="lang-scala"><span class="hljs-comment">// 拡張メソッド</span>
+<span class="hljs-comment">// Scala 2:</span>
+<span class="hljs-keyword">implicit</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RichString</span>(<span class="hljs-params">src: <span class="hljs-type">String</span></span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smile</span></span>: <span class="hljs-type">String</span> = src + <span class="hljs-string">":-)"</span>
+}
+<span class="hljs-comment">// Scala 3:</span>
+<span class="hljs-keyword">extension</span> (src: <span class="hljs-type">String</span>) {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smile</span></span>: <span class="hljs-type">String</span> = src + <span class="hljs-string">":-)"</span>
+}
+</code></pre>
+<pre><code class="lang-scala"><span class="hljs-comment">// 文脈の引き渡し（using引数）</span>
+<span class="hljs-comment">// Scala 2:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span></span>(sql: <span class="hljs-type">String</span>)(<span class="hljs-keyword">implicit</span> conn: <span class="hljs-type">Connection</span>): <span class="hljs-type">Result</span>
+<span class="hljs-comment">// Scala 3:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span></span>(sql: <span class="hljs-type">String</span>)(<span class="hljs-keyword">using</span> conn: <span class="hljs-type">Connection</span>): <span class="hljs-type">Result</span>
+</code></pre>
+<pre><code class="lang-scala"><span class="hljs-comment">// 型クラスインスタンスの定義</span>
+<span class="hljs-comment">// Scala 2:</span>
+<span class="hljs-keyword">implicit</span> <span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">IntAdditive</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Additive</span>[<span class="hljs-type">Int</span>] </span>{ ... }
+<span class="hljs-keyword">implicit</span> <span class="hljs-keyword">val</span> intAdditive: <span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>] = <span class="hljs-keyword">new</span> <span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>] { ... }
+<span class="hljs-comment">// Scala 3:</span>
+<span class="hljs-keyword">given</span> <span class="hljs-type">IntAdditive</span>: <span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>] <span class="hljs-keyword">with</span> { ... }
+<span class="hljs-keyword">given</span> <span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>] <span class="hljs-keyword">with</span> { ... }  <span class="hljs-comment">// 匿名</span>
+</code></pre>
+<pre><code class="lang-scala"><span class="hljs-comment">// 暗黙値の取り出し</span>
+<span class="hljs-comment">// Scala 2:</span>
+implicitly[<span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>]]
+<span class="hljs-comment">// Scala 3:</span>
+summon[<span class="hljs-type">Additive</span>[<span class="hljs-type">Int</span>]]
+</code></pre>
+<p>Scala 3でも<code>implicit</code>キーワードは互換性のために引き続き利用できますが、新しく書くコードでは原則として<code>given</code>・<code>using</code>・<code>extension</code>を使うようにしましょう。</p>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="error-handling.html" class="navigation navigation-prev " aria-label="Previous page: エラー処理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="introduction-to-typeclass.html" class="navigation navigation-next " aria-label="Next page: 型クラスへの誘い">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Given/Using/Extension","level":"1.17","depth":1,"next":{"title":"型クラスへの誘い","level":"1.18","depth":1,"path":"introduction-to-typeclass.md","ref":"introduction-to-typeclass.md","articles":[]},"previous":{"title":"エラー処理","level":"1.16","depth":1,"path":"error-handling.md","ref":"error-handling.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"root":"./honkit","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 3 LTS版）","gitbook":"*"},"file":{"path":"contextual.md","mtime":"2026-07-06T14:42:45.211Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:18.131Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
