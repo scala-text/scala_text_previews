@@ -532,7 +532,7 @@ Javaはプリミティブ型以外の参照型はすべてnullにすることが
 <h2 id="エラーを表現するデータ型を使った処理"><a name="エラーを表現するデータ型を使った処理" class="plugin-anchor" href="#エラーを表現するデータ型を使った処理"><i class="fa fa-link" aria-hidden="true"></i></a>エラーを表現するデータ型を使った処理</h2>
 <p>例外に問題があるとすれば、どのようにエラーを扱えばよいのでしょうか。その答えの1つはエラーを例外ではなく、メソッドの返り値で返せるような値にすることです。</p>
 <p>ここでは正常の値とエラー値のどちらかを表現できるデータ構造の紹介を通じて、Scalaの関数型のエラー処理の方法を見ていきます。</p>
-<h3 id="option"><a name="option" class="plugin-anchor" href="#option"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/Option.scala" target="_blank">Option</a></h3>
+<h3 id="option"><a name="option" class="plugin-anchor" href="#option"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/Option.scala" target="_blank">Option</a></h3>
 <p>OptionはScalaでもっとも多用されるデータ型の1つです。前述のとおりJavaのnullの代替として使われることが多いデータ型です。</p>
 <p>Option型は簡単に言うと、値を1つだけいれることのできるコンテナです。ただし、Optionのまま様々なデータ変換処理ができるように便利な機能を持ちあわせています。</p>
 <h4 id="optionの作り方と値の取得"><a name="optionの作り方と値の取得" class="plugin-anchor" href="#optionの作り方と値の取得"><i class="fa fa-link" aria-hidden="true"></i></a>Optionの作り方と値の取得</h4>
@@ -759,7 +759,7 @@ for { i1 &lt;- v1
       i4 &lt;- v4
       i5 &lt;- v5 } yield i1 * i2 * i3 * i4 * i5
 </code></pre>
-<h3 id="either"><a name="either" class="plugin-anchor" href="#either"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/util/Either.scala" target="_blank">Either</a></h3>
+<h3 id="either"><a name="either" class="plugin-anchor" href="#either"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/util/Either.scala" target="_blank">Either</a></h3>
 <p>Optionによりnullを使う必要はなくなりましたが、いっぽうでOptionでは処理が成功したかどうかしかわからないという問題があります。
 Noneの場合、値が取得できなかったことはわかりますが、エラーの状態は取得できないので、使用できるのはエラーの種類が問題にならないような場合のみです。</p>
 <p>そんなOptionと違い、エラー時にエラーの種類まで取得できるのがEitherです。
@@ -859,7 +859,7 @@ f(g())</p>
 似たような挙動は高階関数を使えば書けるのですが、名前渡しパラメータのほうが簡潔な記述ができるという点でより優れています。
 
 
-### [Try](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/util/Try.scala)
+### [Try](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/util/Try.scala)
 
 ScalaのTryはEitherと同じように正常な値とエラー値のどちらかを表現するデータ型です。
 Eitherとの違いは、2つの型が平等ではなく、エラー値がThrowableに限定されており、型引数を1つしか取らないことです。具体的にはTryは以下の2つの値をとります。
@@ -884,7 +884,7 @@ val v1 = Try(3)</p>
   i3 &lt;- v3
 } yield i1 <em> i2 </em> i3</p>
 <pre><code>
-#### [`NonFatal`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/util/control/NonFatal.scala)の例外
+#### [`NonFatal`](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/util/control/NonFatal.scala)の例外
 
 `Try.apply`がcatchするのはすべての例外ではありません。
 NonFatalという種類の例外だけです。
@@ -1096,7 +1096,7 @@ for式で値を取得した後、mergeメソッドにより中身を畳み込ん
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"エラー処理","level":"1.16","depth":1,"next":{"title":"Implicit","level":"1.17","depth":1,"path":"implicit.md","ref":"implicit.md","articles":[]},"previous":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"path":"case-class-and-pattern-matching.md","ref":"case-class-and-pattern-matching.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"error-handling.md","mtime":"2026-07-06T14:40:06.216Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:21.095Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"エラー処理","level":"1.16","depth":1,"next":{"title":"Implicit","level":"1.17","depth":1,"path":"implicit.md","ref":"implicit.md","articles":[]},"previous":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"path":"case-class-and-pattern-matching.md","ref":"case-class-and-pattern-matching.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"error-handling.md","mtime":"2026-07-07T10:10:05.712Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-07T10:13:17.060Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

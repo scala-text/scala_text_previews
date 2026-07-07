@@ -512,8 +512,7 @@
 <td>本章</td>
 </tr>
 <tr>
-<td><code>&amp;</code> / `\</td>
-<td>` 型</td>
+<td><code>&amp;</code> / <code>|</code> 型</td>
 <td>交差型・合併型</td>
 <td>本章</td>
 </tr>
@@ -549,12 +548,15 @@
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span>(<span class="hljs-params">logger: <span class="hljs-type">Logger</span></span>) </span>{
   <span class="hljs-keyword">export</span> logger.{info, warn}
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span></span>(): <span class="hljs-type">Unit</span> = {
-    info(<span class="hljs-string">"started"</span>)
-    warn(<span class="hljs-string">"low memory"</span>)
-  }
 }
+</code></pre>
+<p><code>export</code>したメンバーは、<code>App</code>の内部で使えるだけでなく、<code>App</code>自身のメソッドとして <strong>外部にも公開</strong> されます（内部で使うだけなら<code>import logger.*</code>でも足ります）。つまり<code>App</code>の利用者は、中に<code>Logger</code>がいることを意識せずに<code>app.info(...)</code>と呼び出せます。</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">val</span> app = <span class="hljs-type">App</span>(<span class="hljs-type">Logger</span>())
+<span class="hljs-comment">// app: App = repl.MdocSession$MdocApp$App$1@789f0eff</span>
+app.info(<span class="hljs-string">"started"</span>)
+<span class="hljs-comment">// [INFO] started</span>
+app.warn(<span class="hljs-string">"low memory"</span>)
+<span class="hljs-comment">// [WARN] low memory</span>
 </code></pre>
 <p><code>export</code>は <strong>委譲（delegation）</strong> を簡潔に書くための機能です。クラスを継承（<code>extends</code>）するほどではないが、特定のメンバーだけを外向きに公開したい、というケースで重宝します。<code>export logger.*</code>のようにワイルドカードで全メンバーを公開することもできます。</p>
 <h2 id="opaque-type"><a name="opaque-type" class="plugin-anchor" href="#opaque-type"><i class="fa fa-link" aria-hidden="true"></i></a><code>opaque type</code></h2>
@@ -584,7 +586,6 @@
 </code></pre>
 <p><code>opaque type</code>の本体は、それを定義したオブジェクト（上の例では<code>Ids</code>）の <strong>内側からは透過的</strong>（<code>Long</code>そのものとして扱える）で、<strong>外側からは不透明</strong>（<code>UserId</code>という別の型として扱われる）になります。これにより、ケースクラスでラップする方法と比べて、ボックス化のコストを払わずに型レベルの区別を導入できます。</p>
 <p>なお、上の例では拡張メソッド<code>value</code>をそれぞれのコンパニオンオブジェクトの中に定義しています。<code>UserId</code>と<code>ProductId</code>は実行時にはどちらも<code>Long</code>になるため、同じスコープに同名の拡張メソッドを並べるとシグネチャが衝突してコンパイルエラーになるからです。</p>
-<p>Scala 2でも<code>AnyVal</code>を使った<code>value class</code>で似たことはできましたが、配列要素やジェネリックパラメータとして扱った瞬間にボックス化が発生するという制約がありました。<code>opaque type</code>はそうした制約から解放されています。</p>
 <h2 id="交差型（）と合併型（）"><a name="交差型（）と合併型（）" class="plugin-anchor" href="#交差型（）と合併型（）"><i class="fa fa-link" aria-hidden="true"></i></a>交差型（<code>&amp;</code>）と合併型（<code>|</code>）</h2>
 <p>Scala 3では、型レベルで「両方の型を満たす」「いずれかの型である」を表現する新しい型演算子が導入されました。</p>
 <h3 id="交差型（intersection-types）"><a name="交差型（intersection-types）" class="plugin-anchor" href="#交差型（intersection-types）"><i class="fa fa-link" aria-hidden="true"></i></a>交差型（intersection types）</h3>
@@ -666,7 +667,7 @@ result <span class="hljs-keyword">match</span> {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Scala 3で追加された主な機能","level":"1.24","depth":1,"next":{"title":"付録：様々な型クラスの紹介","level":"1.25","depth":1,"path":"typeclass.md","ref":"typeclass.md","articles":[]},"previous":{"title":"トレイトの応用編：依存性の注入によるリファクタリング","level":"1.23","depth":1,"path":"advanced-trait-di.md","ref":"advanced-trait-di.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"root":"./honkit","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 3 LTS版）","gitbook":"*"},"file":{"path":"scala3-features.md","mtime":"2026-07-06T14:43:09.570Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:18.131Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Scala 3で追加された主な機能","level":"1.24","depth":1,"next":{"title":"付録：様々な型クラスの紹介","level":"1.25","depth":1,"path":"typeclass.md","ref":"typeclass.md","articles":[]},"previous":{"title":"トレイトの応用編：依存性の注入によるリファクタリング","level":"1.23","depth":1,"path":"advanced-trait-di.md","ref":"advanced-trait-di.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"root":"./honkit","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 3 LTS版）","gitbook":"*"},"file":{"path":"scala3-features.md","mtime":"2026-07-07T10:13:06.058Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-07T10:13:14.219Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -509,43 +509,57 @@ It would fail on the following input: Saturday</p>
 
 ```scala mdoc:nest:silent
 sealed abstract class Exp
-case class Add(lhs: Exp, rhs: Exp) extends Exp
-case class Sub(lhs: Exp, rhs: Exp) extends Exp
-case class Mul(lhs: Exp, rhs: Exp) extends Exp
-case class Div(lhs: Exp, rhs: Exp) extends Exp
-case class Lit(value: Int) extends Exp
-</code></pre><p>全てのデータ型に<code>case</code>修飾子がついているので、これらのデータ型はパターンマッチングのパターンとして使うことができます。この定義から、<code>1 + ((2 * 3) / 2)</code>という式を表すノードを構築します。</p>
-<p>```scala mdoc:nest
-val example = Add(Lit(1), Div(Mul(Lit(2), Lit(3)), Lit(2)))</p>
+
+object Exp {
+  case class Add(lhs: Exp, rhs: Exp) extends Exp
+  case class Sub(lhs: Exp, rhs: Exp) extends Exp
+  case class Mul(lhs: Exp, rhs: Exp) extends Exp
+  case class Div(lhs: Exp, rhs: Exp) extends Exp
+  case class Lit(value: Int) extends Exp
+}
+</code></pre><p>こちらもScala 3のenumを使うと以下のように簡潔に書くことが可能です。</p>
+<p>```scala mdoc:nest:silent
+enum Exp {
+  case Add(lhs: Exp, rhs: Exp)
+  case Sub(lhs: Exp, rhs: Exp)
+  case Mul(lhs: Exp, rhs: Exp)
+  case Div(lhs: Exp, rhs: Exp)
+  case Lit(value: Int)
+}</p>
 <pre><code>
-この`example`ノードを元に四則演算を定義する関数を定義してみます。関数の定義の詳細は後ほど説明しますが、ここでは雰囲気だけをつかんでください。
+全てのデータ型に`case`修飾子がついているので、これらのデータ型はパターンマッチングのパターンとして使うことができます。この定義から、`1 + ((2 * 3) / 2)`という式を表すノードを構築します。
 
 ```scala mdoc:nest
+import Exp.*
+
+val example = Add(Lit(1), Div(Mul(Lit(2), Lit(3)), Lit(2)))
+</code></pre><p>この<code>example</code>ノードを元に四則演算を定義する関数を定義してみます。関数の定義の詳細は後ほど説明しますが、ここでは雰囲気だけをつかんでください。</p>
+<p>```scala mdoc:nest
 def eval(exp: Exp): Int = exp match {
   case Add(l, r) =&gt; eval(l) + eval(r)
   case Sub(l, r) =&gt; eval(l) - eval(r)
   case Mul(l, r) =&gt; eval(l) * eval(r)
   case Div(l, r) =&gt; eval(l) / eval(r)
   case Lit(v) =&gt; v
-}
-</code></pre><p>この定義をREPLに読み込ませて、<code>eval(example)</code>として、</p>
-<p>```scala mdoc:nest
-eval(example)</p>
+}</p>
 <pre><code>
-のように表示されれば成功です。きちんと、`1 + ((2 * 3) / 2)`という式の計算結果が出ていますね。ここで注目すべきは、パターンマッチングによって、
+この定義をREPLに読み込ませて、`eval(example)`として、
 
-1. ノードの種類と構造によって分岐する
-2. ネストしたノードを分解する
-3. ネストしたノードを分解した結果で変数を束縛する
-
-という3つの動作が同時に行えていることです。 これがケースクラスを使ったデータ型とパターンマッチングの組み合わせの強力さです。また、この`match`式の中で、たとえば
-`case Lit(v) =&gt; v`の行を書き忘れた場合、`DayOfWeek`の例と同じように、
-
-```scala
-&lt;console&gt;:16: warning: match may not be exhaustive.
-It would fail on the following input: Lit(_)
-       def eval(exp: Exp): Int = exp match {
-</code></pre><p>記述漏れがあることを指摘してくれますから、ミスを防ぐこともできます。</p>
+```scala mdoc:nest
+eval(example)
+</code></pre><p>のように表示されれば成功です。きちんと、<code>1 + ((2 * 3) / 2)</code>という式の計算結果が出ていますね。ここで注目すべきは、パターンマッチングによって、</p>
+<ol>
+<li>ノードの種類と構造によって分岐する</li>
+<li>ネストしたノードを分解する</li>
+<li>ネストしたノードを分解した結果で変数を束縛する</li>
+</ol>
+<p>という3つの動作が同時に行えていることです。 これがケースクラスを使ったデータ型とパターンマッチングの組み合わせの強力さです。また、この<code>match</code>式の中で、たとえば
+<code>case Lit(v) =&gt; v</code>の行を書き忘れた場合、<code>DayOfWeek</code>の例と同じように、</p>
+<pre><code class="lang-scala">&lt;console&gt;:<span class="hljs-number">16</span>: warning: <span class="hljs-keyword">match</span> may not be exhaustive.
+<span class="hljs-type">It</span> would fail on the following input: <span class="hljs-type">Lit</span>(_)
+       <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">eval</span></span>(exp: <span class="hljs-type">Exp</span>): <span class="hljs-type">Int</span> = exp <span class="hljs-keyword">match</span> {
+</code></pre>
+<p>記述漏れがあることを指摘してくれますから、ミスを防ぐこともできます。</p>
 <h2 id="変数宣言におけるパターンマッチング"><a name="変数宣言におけるパターンマッチング" class="plugin-anchor" href="#変数宣言におけるパターンマッチング"><i class="fa fa-link" aria-hidden="true"></i></a>変数宣言におけるパターンマッチング</h2>
 <p><code>match</code>式中のパターンマッチングのみを扱ってきましたが、実は変数宣言でもパターンマッチングを行うことができます。</p>
 <p>たとえば、次のようなケースクラス<code>Point</code>があったとします。</p>
@@ -871,7 +885,7 @@ val even: Int =&gt; Boolean = (x =&gt; x match {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"next":{"title":"エラー処理","level":"1.16","depth":1,"path":"error-handling.md","ref":"error-handling.md","articles":[]},"previous":{"title":"コレクションライブラリ","level":"1.14","depth":1,"path":"collection.md","ref":"collection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"case-class-and-pattern-matching.md","mtime":"2026-07-06T14:40:06.216Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:21.095Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"next":{"title":"エラー処理","level":"1.16","depth":1,"path":"error-handling.md","ref":"error-handling.md","articles":[]},"previous":{"title":"コレクションライブラリ","level":"1.14","depth":1,"path":"collection.md","ref":"collection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"case-class-and-pattern-matching.md","mtime":"2026-07-07T10:10:05.712Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-07T10:13:17.060Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

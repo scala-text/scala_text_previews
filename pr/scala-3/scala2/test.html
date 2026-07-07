@@ -573,7 +573,7 @@ name := "scalatest_study"
 
 version := "1.0"
 
-scalaVersion := "3.8.3"
+scalaVersion := "3.8.4"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest-flatspec" % "3.2.20" % "test",
@@ -670,8 +670,8 @@ class CalcSpec extends AnyFlatSpec with Diagrams {
 <p>テストを実装したら<code>sbt test</code>でテストを実行してください。以下のような実行結果が表示されます。</p>
 <pre><code>[info] Loading project definition from /Users/dwango/workspace/scalatest_study/project
 [info] Set current project to scalatest_study (in build file:/Users/dwango/workspace/scalatest_study/)
-[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.3/classes...
-[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.3/test-classes...
+[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.4/classes...
+[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.4/test-classes...
 [info] CalcSpec:
 [info] sum関数
 [info] - should 整数の配列を取得し、それらを足し合わせた整数を返すことができる
@@ -685,7 +685,7 @@ class CalcSpec extends AnyFlatSpec with Diagrams {
 </code></pre><p>実行結果から、すべてのテストに成功したことを確認できます。なお、わざと失敗した場合にはどのように表示されるのか確認してみましょう。</p>
 <pre><code>[info] Loading project definition from /Users/dwango/workspace/scalatest_study/project
 [info] Set current project to scalatest_study (in build file:/Users/dwango/workspace/scalatest_study/)
-[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.3/test-classes...
+[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.4/test-classes...
 [info] CalcSpec:
 [info] sum関数
 [info] - should 整数の配列を取得し、それらを足し合わせた整数を返すことができる *** FAILED ***
@@ -759,7 +759,7 @@ class CalcSpec extends AnyFlatSpec with Diagrams with TimeLimits {
 <p>最終的に全てのテストをまとめて<code>sbt test</code>で実行すると以下の様な出力が得られます。</p>
 <pre><code>[info] Loading project definition from /Users/dwango/workspace/scalatest_study/project
 [info] Set current project to scalatest_study (in build file:/Users/dwango/workspace/scalatest_study/)
-[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.3/test-classes...
+[info] Compiling 1 Scala source to /Users/dwango/workspace/scalatest_study/target/scala-3.8.4/test-classes...
 [info] CalcSpec:
 [info] sum関数
 [info] - should 整数の配列を取得し、それらを足し合わせた整数を返すことができる
@@ -822,7 +822,7 @@ class CalcSpec extends AnyFlatSpec with Diagrams with TimeLimits {
 <p>```scala mdoc:nest:silent
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "<latest>")</latest></p>
 <pre><code>
-その後、`sbt clean coverage test coverageReport`を実行することで、`target/scala-3.8.3/scoverage-report/index.html`にレポートが出力されます。
+その後、`sbt clean coverage test coverageReport`を実行することで、`target/scala-3.8.4/scoverage-report/index.html`にレポートが出力されます。
 
 ![Scoverage Code Coverage](img/scoverage_code_coverage.png)
 
@@ -950,7 +950,7 @@ ScalafixFailed: TestError
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"テスト","level":"1.20","depth":1,"next":{"title":"Javaとの相互運用","level":"1.21","depth":1,"path":"java-interop.md","ref":"java-interop.md","articles":[]},"previous":{"title":"FutureとPromise","level":"1.19","depth":1,"path":"future-and-promise.md","ref":"future-and-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"test.md","mtime":"2026-07-06T14:40:06.234Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:21.095Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"テスト","level":"1.20","depth":1,"next":{"title":"Javaとの相互運用","level":"1.21","depth":1,"path":"java-interop.md","ref":"java-interop.md","articles":[]},"previous":{"title":"FutureとPromise","level":"1.19","depth":1,"path":"future-and-promise.md","ref":"future-and-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"test.md","mtime":"2026-07-07T10:10:05.729Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-07T10:13:17.060Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

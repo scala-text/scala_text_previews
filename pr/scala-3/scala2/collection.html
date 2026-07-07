@@ -470,9 +470,9 @@
 <li><code>Array</code>(mutable)</li>
 <li><code>List</code>(immutable)</li>
 <li><code>Map</code>(immutable)・<code>Map</code>(mutable)</li>
-<li><code>Set</code>(immutable)・ <code>Set</code>(mutable)</li>
+<li><code>Set</code>(immutable)・<code>Set</code>(mutable)</li>
 </ul>
-<h2 id="array"><a name="array" class="plugin-anchor" href="#array"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/Array.scala" target="_blank">Array</a></h2>
+<h2 id="array"><a name="array" class="plugin-anchor" href="#array"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/Array.scala" target="_blank">Array</a></h2>
 <p>まずは大抵のプログラミング言語にある配列です。</p>
 <p>```scala mdoc:nest
 val arr = Array(1, 2, 3, 4, 5)</p>
@@ -520,7 +520,7 @@ val arr = Array(1, 2, 3, 4, 5)</p>
 <pre><code>
 &lt;!-- end answer --&gt;
 
-### [Range](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/Range.scala)
+### [Range](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/Range.scala)
 
 `Range`は範囲を表すオブジェクトです。`Range`は直接名前を指定して生成するより、`to`メソッドと`until`メソッドを用いて呼びだすことが多いです。また、`toList`メソッドを用いて、その範囲の数値の列を後述する`List`に変換することができます。では、早速REPLで`Range`を使ってみましょう。
 
@@ -533,7 +533,7 @@ val arr = Array(1, 2, 3, 4, 5)</p>
 
 (1 until 5).toList
 </code></pre><p><code>to</code>は右の被演算子を含む範囲を、<code>until</code>は右の被演算子を含まない範囲を表していることがわかります。また、<code>Range</code>は<code>toList</code>で後述する<code>List</code>に変換することができることもわかります。</p>
-<h3 id="list"><a name="list" class="plugin-anchor" href="#list"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/List.scala" target="_blank">List</a></h3>
+<h3 id="list"><a name="list" class="plugin-anchor" href="#list"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/List.scala" target="_blank">List</a></h3>
 <p>さて、導入として大抵の言語にある<code>Array</code>を出しましたが、Scalaでは<code>Array</code>を使うことはそれほど多くありません。代わりに<code>List</code>や
 <code>Vector</code>といったデータ構造をよく使います（<code>Vector</code>については後述します）。<code>List</code>の特徴は、一度作成したら中身を変更できない（immutable）ということです。中身を変更できないデータ構造（永続データ構造とも呼びます）はScalaがサポートしている関数型プログラミングにとって重要な要素です。それでは<code>List</code>を使ってみましょう。</p>
 <p>```scala mdoc:nest
@@ -543,8 +543,8 @@ val lst = List(1, 2, 3, 4, 5)</p>
 lst(0) = 7
 </code></pre><p>見ればわかるように、<code>List</code>は一度作成したら値を更新することができません。しかし、<code>List</code>は値を更新することができませんが、ある<code>List</code>を元に新しい<code>List</code>を作ることができます。これが値を更新することの代わりになります。以降、<code>List</code>に対して組み込みで用意されている各種操作をみていくことで、<code>List</code>の値を更新することなく色々な操作ができることがわかるでしょう。</p>
 <h3 id="nil：空のlist"><a name="nil：空のlist" class="plugin-anchor" href="#nil：空のlist"><i class="fa fa-link" aria-hidden="true"></i></a>Nil：空のList</h3>
-<p>まず最初に紹介するのは<code>Nil</code>です。Scalaで空の<code>List</code>を表すには<code>Nil</code>というものを使います。Rubyなどでは<code>nil</code>は言語上かなり特別な意味を持ちますが、Scalaではデフォルトでスコープに入っているということ以外は特別な意味はなく<a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/List.scala#L659" target="_blank">単にobjectです</a>。Nilは単体では意味がありませんが、次に説明する<code>::</code>と合わせて用いることが多いです。</p>
-<h3 id="--listの先頭に要素をくっつける"><a name="--listの先頭に要素をくっつける" class="plugin-anchor" href="#--listの先頭に要素をくっつける"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/List.scala#L101" target="_blank">:: - Listの先頭に要素をくっつける</a></h3>
+<p>まず最初に紹介するのは<code>Nil</code>です。Scalaで空の<code>List</code>を表すには<code>Nil</code>というものを使います。Rubyなどでは<code>nil</code>は言語上かなり特別な意味を持ちますが、Scalaではデフォルトでスコープに入っているということ以外は特別な意味はなく<a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/List.scala#L659" target="_blank">単にobjectです</a>。Nilは単体では意味がありませんが、次に説明する<code>::</code>と合わせて用いることが多いです。</p>
+<h3 id="--listの先頭に要素をくっつける"><a name="--listの先頭に要素をくっつける" class="plugin-anchor" href="#--listの先頭に要素をくっつける"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/List.scala#L101" target="_blank">:: - Listの先頭に要素をくっつける</a></h3>
 <p><code>::</code>（コンスと読みます）は既にある<code>List</code>の先頭に要素をくっつけるメソッドです。これについては、REPLで結果をみた方が早いでしょう。</p>
 <p>```scala mdoc:nest
 val a1 = 1 :: Nil
@@ -962,7 +962,7 @@ List(1, 2, 3, 4)
 List(1, 2, 3, 4) :+ 5 // 注意！末尾への追加は、Listの要素数分かかる
 </code></pre><h3 id="紹介したメソッドについて"><a name="紹介したメソッドについて" class="plugin-anchor" href="#紹介したメソッドについて"><i class="fa fa-link" aria-hidden="true"></i></a>紹介したメソッドについて</h3>
 <p><code>mkString</code>をはじめとした<code>List</code>の色々なメソッドを紹介してきましたが、実はこれらの大半は<code>List</code>特有ではなく、既に紹介した<code>Range</code>や<code>Array</code>、これから紹介する他のコレクションでも同様に使うことができます。何故ならばこれらの操作の大半は特定のコレクションではなく、コレクションのスーパータイプである共通のトレイト中に宣言されているからです。もちろん、<code>List</code>に要素を加える処理と<code>Set</code>に要素を加える処理（<code>Set</code>に既にある要素は加えない）のように、中で行われる処理が異なることがあるので、その点は注意する必要があります。詳しくは<a href="https://www.scala-lang.org/api/current/index.html" target="_blank">ScalaのAPIドキュメント</a>を探索してみましょう。</p>
-<h3 id="vector"><a name="vector" class="plugin-anchor" href="#vector"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/Vector.scala" target="_blank">Vector</a></h3>
+<h3 id="vector"><a name="vector" class="plugin-anchor" href="#vector"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/Vector.scala" target="_blank">Vector</a></h3>
 <p><code>Vector</code>は少々変わったデータ構造です。<code>Vector</code>は一度データ構造を構築したら変更できないimmutableなデータ構造です。要素へのランダムアクセスや長さの取得、データの挿入や削除、いずれの操作も十分に高速にできる比較的万能なデータ構造です。immutableなデータ構造を使う場合は、まず<code>Vector</code>を検討すると良いでしょう。</p>
 <p>```scala mdoc:nest
 Vector(1, 2, 3, 4, 5) //どの操作も「ほぼ」一定の時間で終わる</p>
@@ -975,10 +975,10 @@ Vector(1, 2, 3, 4, 5) //どの操作も「ほぼ」一定の時間で終わる</
 `Map`はキーから値へのマッピングを提供するデータ構造です。他の言語では辞書や連想配列と呼ばれたりします。
 Scalaでは`Map`として一度作成したら変更できないimmutableな`Map`と変更可能なmutableな`Map`の2種類を提供しています。
 
-### [`scala.collection.immutable.Map`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/Map.scala)
+### [`scala.collection.immutable.Map`](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/Map.scala)
 
-Scalaで何も設定せずにただ`Map`と書いた場合、`scala.collection.immutable.Map`が使われます。その名の通り、一度作成すると変更することはできません。内部の実装としては主に[`scala.collection.immutable.HashMap`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/HashMap.scala)と
-[`scala.collection.immutable.TreeMap`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/TreeMap.scala)の2種類がありますが、通常は`HashMap`が使われます。
+Scalaで何も設定せずにただ`Map`と書いた場合、`scala.collection.immutable.Map`が使われます。その名の通り、一度作成すると変更することはできません。内部の実装としては主に[`scala.collection.immutable.HashMap`](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/HashMap.scala)と
+[`scala.collection.immutable.TreeMap`](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/TreeMap.scala)の2種類がありますが、通常は`HashMap`が使われます。
 
 ```scala mdoc:nest
 val m = Map("A" -&gt; 1, "B" -&gt; 2, "C" -&gt; 3)
@@ -1004,8 +1004,8 @@ import scala.collection.mutable</p>
 Set(1, 1, 2, 3, 4)
 </code></pre><p>重複した1が削除されて、1が1つだけになっていることがわかります。</p>
 <h3 id="scalacollectionimmutableset"><a name="scalacollectionimmutableset" class="plugin-anchor" href="#scalacollectionimmutableset"><i class="fa fa-link" aria-hidden="true"></i></a><code>scala.collection.immutable.Set</code></h3>
-<p>Scalaで何も設定せずにただ<code>Set</code>と書いた場合、<code>scala.collection.immutable.Set</code>が使われます。immutableな<code>Map</code>の場合と同じく、一度作成すると変更することはできません。内部の実装としては、主に <a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/HashSet.scala" target="_blank"><code>scala.collection.immutable.HashSet</code></a> と
-<a href="https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/immutable/TreeSet.scala" target="_blank"><code>scala.collection.immutable.TreeSet</code></a> の2種類がありますが、通常は<code>HashSet</code>が使われます。</p>
+<p>Scalaで何も設定せずにただ<code>Set</code>と書いた場合、<code>scala.collection.immutable.Set</code>が使われます。immutableな<code>Map</code>の場合と同じく、一度作成すると変更することはできません。内部の実装としては、主に <a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/HashSet.scala" target="_blank"><code>scala.collection.immutable.HashSet</code></a> と
+<a href="https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/immutable/TreeSet.scala" target="_blank"><code>scala.collection.immutable.TreeSet</code></a> の2種類がありますが、通常は<code>HashSet</code>が使われます。</p>
 <p>```scala mdoc:nest
 val s = Set(1, 2, 3, 4, 5)</p>
 <p>s - 5 // 5を削除した後も</p>
@@ -1013,8 +1013,8 @@ val s = Set(1, 2, 3, 4, 5)</p>
 <pre><code>
 ### `scala.collection.mutable.Set`
 
-Scalaの変更可能な`Set`は`scala.collection.mutable.Set`にあります。主な実装としては、[`scala.collection.mutable.HashSet`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/mutable/HashSet.scala) 、
-[`scala.collection.mutable.TreeSet`](https://github.com/scala/scala3/blob/3.8.3/library/src/scala/collection/mutable/TreeSet.scala)がありますが、通常は`HashSet`が使われます。
+Scalaの変更可能な`Set`は`scala.collection.mutable.Set`にあります。主な実装としては、[`scala.collection.mutable.HashSet`](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/mutable/HashSet.scala) 、
+[`scala.collection.mutable.TreeSet`](https://github.com/scala/scala3/blob/3.8.4/library/src/scala/collection/mutable/TreeSet.scala)がありますが、通常は`HashSet`が使われます。
 
 ```scala mdoc:nest
 import scala.collection.mutable
@@ -1073,7 +1073,7 @@ s // 変更が反映される
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"コレクションライブラリ","level":"1.14","depth":1,"next":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"path":"case-class-and-pattern-matching.md","ref":"case-class-and-pattern-matching.md","articles":[]},"previous":{"title":"関数","level":"1.13","depth":1,"path":"function.md","ref":"function.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"collection.md","mtime":"2026-07-06T14:40:06.216Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:21.095Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"コレクションライブラリ","level":"1.14","depth":1,"next":{"title":"ケースクラスとパターンマッチング","level":"1.15","depth":1,"path":"case-class-and-pattern-matching.md","ref":"case-class-and-pattern-matching.md","articles":[]},"previous":{"title":"関数","level":"1.13","depth":1,"path":"function.md","ref":"function.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 2版・archived）","gitbook":"*"},"file":{"path":"collection.md","mtime":"2026-07-07T10:10:05.712Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-07T10:13:17.060Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

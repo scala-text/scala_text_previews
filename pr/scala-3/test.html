@@ -845,9 +845,9 @@ BDDでテストを書くことによってテストによってどのような�
 <p>利用しているカバレッジツールがどのように動作するのか把握した上で、カバレッジレポートからどのコードが実行されなかったのか情報収集しましょう。数値だけに目を向けるのではなく、カバレッジ測定によってどういった情報が得られたのかを考えてください。そうすれば、ツールに振り回されることなくテストの少ない部分を発見できるでしょう。</p>
 <h2 id="コードスタイルチェック"><a name="コードスタイルチェック" class="plugin-anchor" href="#コードスタイルチェック"><i class="fa fa-link" aria-hidden="true"></i></a>コードスタイルチェック</h2>
 <p>なおテストとは直接は関係ありませんが、ここまでで紹介したテストは、実際にはJenkinsなどの継続的インテグレーションツール（CIツール）で実施され、リグレッションを検出するためにつかわれます。その際に、CIの一環として一緒に行われることが多いのがコードスタイルチェックです。</p>
-<p>コードスタイルチェックにおいて、インデントの数や定義の前後のスペースなどコードのフォーマットをチェックするにはフォーマッタを、静的解析で推奨されるScalaコードの書き方になっているかをチェックするにはリンターを使います。例えば、次のメソッド定義はProcedure Syntaxと呼ばれ、Scala 2.13で非推奨となり、Scala 3では構文自体が削除されているためコンパイルエラーになります。リンターはこのような望ましくないコードを検知して報告します。</p>
+<p>コードスタイルチェックにおいて、インデントの数や定義の前後のスペースなどコードのフォーマットをチェックするにはフォーマッタを、静的解析で推奨されるScalaコードの書き方になっているかをチェックするにはリンターを使います。例えば、次のコードは変数の展開をしていないのに文字列補間子<code>s</code>を付けています。コンパイルは問題なく通りますが、この<code>s</code>は不要です。リンターはこのような冗長で望ましくないコードを検知して報告します。</p>
 <pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Example</span> </span>{
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myProcedure</span> </span>{}
+  <span class="hljs-keyword">val</span> greeting = <span class="hljs-string">s"Hello, World!"</span>
 }
 </code></pre>
 <p>現在では<a href="https://scalameta.org/scalafmt/" target="_blank">scalafmt</a>がデファクトのフォーマッタとして、<a href="https://scalacenter.github.io/scalafix/" target="_blank">scalafix</a>や<a href="https://github.com/wartremover/wartremover" target="_blank">wartremover</a>がリンターとして使われています。scalafmt、scalafix、wartremoverはScala 3に対応しています。
@@ -868,27 +868,25 @@ addSbtPlugin(<span class="hljs-string">"ch.epfl.scala"</span> % <span class="hlj
 <p>フォーマットは<code>.scalafmt.conf</code>ファイルで設定できます。詳しくは公式ドキュメントにひととおり目を通してみるといいでしょう。
 <a href="https://scalameta.org/scalafmt/docs/configuration.html" target="_blank">https://scalameta.org/scalafmt/docs/configuration.html</a></p>
 <h3 id="scalafix"><a name="scalafix" class="plugin-anchor" href="#scalafix"><i class="fa fa-link" aria-hidden="true"></i></a>scalafix</h3>
-<p>さて、次はscalafixを試してみましょう。なお、Procedure SyntaxはScala 2の構文であるため、この例はScala 2のコードベースを対象としたものです。Scala 3プロジェクトでは別のルール（例えば公開されているコミュニティルール）を試してみてください。
+<p>さて、次はscalafixを試してみましょう。先ほどの冗長な<code>s</code>補間子を検知する<code>RedundantSyntax</code>ルールを使います。
 sbtシェルで次のコマンドを実行してください。</p>
-<pre><code class="lang-sh">scalafix --check --rules ProcedureSyntax
+<pre><code class="lang-sh">scalafix --check --rules RedundantSyntax
 </code></pre>
 <p>下記のように警告が表示されます。</p>
-<pre><code>[info] Running scalafix on 1 Scala sources
-[error] --- /path/to/problematic/File.scala
+<pre><code>[error] --- /path/to/Example.scala
 [error] +++ &lt;expected fix&gt;
-...省略...
-[error] -  def myProcedure {}
-[error] +  def myProcedure: Unit = {}
-[error]  
-...省略...
-[error] 
-ScalafixFailed: TestError
-</code></pre><p>問題のあるコードを自動的に書き換えるには<code>--check</code>オプションを外して<code>scalafix ProcedureSyntax</code>コマンドを実行します。先ほどの<code>myProcedure</code>は次のように修正されます。</p>
+[error] @@ -1,3 +1,3 @@
+[error]  object Example {
+[error] -  val greeting = s"Hello, World!"
+[error] +  val greeting = "Hello, World!"
+[error]  }
+[error] (Compile / scalafix) scalafix.sbt.ScalafixFailed: TestError
+</code></pre><p>問題のあるコードを自動的に書き換えるには<code>--check</code>オプションを外して<code>scalafix --rules RedundantSyntax</code>コマンドを実行します。先ほどの<code>greeting</code>は次のように修正されます。</p>
 <pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Example</span> </span>{
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myProcedure</span></span>: <span class="hljs-type">Unit</span> = {}
+  <span class="hljs-keyword">val</span> greeting = <span class="hljs-string">"Hello, World!"</span>
 }
 </code></pre>
-<p>Procedure Syntaxの警告と修正はscalafixにデフォルトで用意されていますが、ライブラリとして公開されているscalafixのルールを使うことでリンターのルールを追加できます。公開されているルールは<a href="https://scalacenter.github.io/scalafix/docs/rules/community-rules.html" target="_blank">scalafixのドキュメント</a>に書いてあります。</p>
+<p><code>RedundantSyntax</code>のようないくつかのルールはscalafixにデフォルトで用意されていますが、ライブラリとして公開されているscalafixのルールを使うことでリンターのルールを追加できます。公開されているルールは<a href="https://scalacenter.github.io/scalafix/docs/rules/community-rules.html" target="_blank">scalafixのドキュメント</a>に書いてあります。</p>
 <h2 id="テストを書こう"><a name="テストを書こう" class="plugin-anchor" href="#テストを書こう"><i class="fa fa-link" aria-hidden="true"></i></a>テストを書こう</h2>
 <p>開発者として意識してほしいことを挙げておきます。</p>
 <ul>
@@ -953,7 +951,7 @@ ScalafixFailed: TestError
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"テスト","level":"1.20","depth":1,"next":{"title":"Javaとの相互運用","level":"1.21","depth":1,"path":"java-interop.md","ref":"java-interop.md","articles":[]},"previous":{"title":"FutureとPromise","level":"1.19","depth":1,"path":"future-and-promise.md","ref":"future-and-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"root":"./honkit","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 3 LTS版）","gitbook":"*"},"file":{"path":"test.md","mtime":"2026-07-06T14:43:11.667Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-06T14:43:18.131Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"テスト","level":"1.20","depth":1,"next":{"title":"Javaとの相互運用","level":"1.21","depth":1,"path":"java-interop.md","ref":"java-interop.md","articles":[]},"previous":{"title":"FutureとPromise","level":"1.19","depth":1,"path":"future-and-promise.md","ref":"future-and-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","japanese-support","footnote-string-to-number","anchors","regexplace","forkmegithub"],"root":"./honkit","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"regexplace":{"substitutes":[{"pattern":"<!-- begin answer id=\"(.*)\" style=\"(.*)\" -->","flags":"g","substitute":"<div><button type=\"button\" id=\"$1_show_answer_button\" style=\"display:block\" onclick=\"document.getElementById('$1').style.display='block'; document.getElementById('$1_show_answer_button').style.display='none'; document.getElementById('$1_hide_answer_button').style.display='block'; \">解答例を表示する</button><button type=\"button\" id=\"$1_hide_answer_button\" style=\"display:none\" onclick=\"document.getElementById('$1').style.display='none'; document.getElementById('$1_show_answer_button').style.display='block'; document.getElementById('$1_hide_answer_button').style.display='none'; \">解答例を隠す</button></div><div id=\"$1\" style=\"$2\">"},{"pattern":"<!-- end answer -->","flags":"g","substitute":"</div>"}]},"search":{},"footnote-string-to-number":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"japanese-support":{},"highlight":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"forkmegithub":{"color":"darkblue","url":"https://github.com/scala-text/scala_text"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"INTRODUCTION.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Scala研修テキスト（Scala 3 LTS版）","gitbook":"*"},"file":{"path":"test.md","mtime":"2026-07-07T10:13:08.199Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-07-07T10:13:14.219Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
